@@ -64,3 +64,10 @@ result += `${addZeroes(minutes)}:${addZeroes(seconds)}`
 pomodoroTimer.innerText = result.toString()
 }
 
+
+const stopClock = () => {
+    clearInterval(clockTimer) // reset timer set
+    isClockRunning = false // update variable to know timer has stopped
+    timeLeft = workSession // reset the time left to original state
+    displayTimeLeft() // update timer display
+}
