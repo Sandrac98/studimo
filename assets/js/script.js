@@ -24,7 +24,8 @@ let isClockRunning = false
 let workSession = 1500 // 25 minutes in seconds
 let timeLeft = 1500
 let breakSession = 1500 //5 minutes in seconds
-
+let type = 'Work'
+let timeSpent = 0
 
 
 const toggleClock = (reset) => {
@@ -36,7 +37,7 @@ const toggleClock = (reset) => {
         if (isClockRunning === true) {
             clockTimer = setInterval(() => {
                 // decrese time left and increase time spent
-                timeLeft-- 
+                stepDown() 
                 displayTimeLeft()
             }, 1000)
             clearInterval(clockTimer)
@@ -70,4 +71,25 @@ const stopClock = () => {
     isClockRunning = false // update variable to know timer has stopped
     timeLeft = workSession // reset the time left to original state
     displayTimeLeft() // update timer display
+}
+
+// toggle between 'work' and 'break' when timer runs out
+const stepDown = () => {
+    if (timeLeft > 0) {
+        timeLeft--
+        timeSpent++
+    } else if (timeLeft === 0) {
+        timeSpent = 0 
+        //if timer is over switch from work to break and viceversa
+        if(type === 'Work') {
+            timeLeft = breakSession
+            displaySessionLog('Work')
+            type = 'Break'
+        } else {
+            timeLeft = workSession
+            type = 'Work'
+            displaySessionLog('Break')
+        }
+    }
+    displayTimeLeft()
 }
