@@ -67,10 +67,13 @@ pomodoroTimer.innerText = result.toString()
 
 
 const stopClock = () => {
+    displaySessionLog(type) // display time spent so in this session
     clearInterval(clockTimer) // reset timer set
     isClockRunning = false // update variable to know timer has stopped
     timeLeft = workSession // reset the time left to original state
     displayTimeLeft() // update timer display
+    timeSpent = 0 // increases time we spend in session
+    type = type === 'Work' ? 'Break' : 'Work' // toggle between work and break
 }
 
 // toggle between 'work' and 'break' when timer runs out
@@ -92,4 +95,19 @@ const stepDown = () => {
         }
     }
     displayTimeLeft()
+}
+
+// display session log
+const displaySessionLog = (type) => {
+    const sessionList = document.getElementById('pomo-sessions')
+    // append li to ul
+    const li = document.createElement('li')
+    let sessionLabel = type
+    let elapsedTime = parseInt(timeSpent / 60)
+    elapsedTime = elapsedTime > 0 ? elapsedTime : '< 1'
+
+    const text = document.createTextNode(`${sessionLabel} : ${elapsedTime} min`)
+    li.appendChild(text)
+    sessionList.appendChild(li)
+ 
 }
