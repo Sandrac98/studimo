@@ -1,108 +1,98 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
 
-Welcome USER_NAME,
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+STUDIMO is here to assist you in increasing your focus and productivity through the Pomodoro Technique. Our website features a user-friendly timer to optimize your study sessions. Whether you're a student, professional, or seeking to improve productivity, STUDIMO has everything you need to reach your objectives. Give it a try now and see the impact the Pomodoro Technique can have on your life!
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **September 1, 2021**
 
-## Gitpod Reminders
+The goals of this website are:
+* Help individuals increase their productivity and focus through the use of the Pomodoro Technique
+* Provide timer that implements the technique and assists users in breaking down their work into manageable chunks of time with breaks in between
+* Encourage visitor to  get more done in less time and with less stress.
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
 
-`python3 -m http.server`
 
-A blue button should appear to click: _Make Public_,
+# UX
+## Ideal client
+### The ideal visitor for this website is:
 
-Another blue button should appear to click: _Open Browser_.
+* Someone who is looking to improve their productivity and focus.
+* someone  who is interested in using the Pomodoro Technique to achieve their goals.
+* Anyone who wants to increase their efficiency and manage their time more effectively.
+* The ideal visitor could come from a variety of backgrounds.
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
 
-A blue button should appear to click: _Make Public_,
+### Client stories
 
-Another blue button should appear to click: _Open Browser_.
+1. As a student, I want to be able to set a timer for 25-minute study sessions and 5-minute breaks, so I can stay focused and refreshed during my study sessions.
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+2. As a freelance worker, I want to be able to track my work progress and stay on schedule with the help of the Pomodoro Technique, so I can meet my deadlines and increase my productivity.
 
-To log into the Heroku toolbelt CLI:
+3. As a project manager, I want to be able to assign tasks to team members and monitor their progress using the Pomodoro Technique, so I can effectively manage our project and meet our goals.
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+4. As a language learner, I want to be able to use the Pomodoro Technique to efficiently practice my language skills, so I can make faster progress and achieve my learning goals.
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
+5. As a busy professional, I want to be able to easily use the Pomodoro Technique to break down my work into manageable chunks, so I can stay focused and reduce stress throughout the workday.
 
-------
 
-## Release History
+# Features 
+## Existing Features
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+- Timer: The main component of a STUDIMO is the timer, which allows users to set a 25-minute work session, followed by a 5-minute break.
 
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
+- Reset button:  Allows users to restart or reset the timer. This feature can be useful when the user wants to repeat the Pomodoro cycle, for example, if they need to take a longer break or if they want to repeat the cycle with a different task.
 
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
+## Features Left to Implement
 
-**July 2 2021:** Remove extensions that are not available in Open VSX.
+- I would like to implement the capability to create an account for convenient tracking of all sessions conducted.
+- I would like to incorporate the option to integrate with the calendar app for effective monitoring of future events.
 
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
+## Colour Pallet
 
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
+I chose to use various shades of blue for STUDIMO with the intention of helping students stay focused during their study sessions. Blue is a color that is known to evoke feelings of calm, tranquility, and stability, which makes it a perfect choice for spaces where relaxation is encouraged, such as bedrooms and bathrooms. Furthermore, blue is associated with freedom, imagination, and inspiration, making it an ideal color for creative and innovative environments, as it is believed to enhance the mind and foster self-expression. Moreover, the color blue has been shown to have a soothing effect on both the body and mind, making it a great choice for promoting balance and overall well-being.
+![Colour Pallet](./img/color-pallete.png)
 
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
 
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
+# Testing  
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
+The website was tested for responsiveness using the Google Chrome browser and the Chrome Developer Tools to check the different screen sizes. Additionally, the website was also tested on a Samsung Galaxy a52 5G using the Samsung internet browser. No errors were found during the testing process. 
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
+## User Stories Testing.
+* As a productivity-focused user, I desire the ability to customize my Pomodoro timer to 25 minutes, allowing for a uninterrupted work session.
+   - This can be achieved by simply hitting the 'Study' button.
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+* As a visually-oriented user, I desire the ability to view a visual representation of my Pomodoro timer, making it easier to track the remaining time for my work session.
+   - This can be achieved by checking the time left on the current session.
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
+* If I have completed a task within the designated time, I may choose to reset the timer in order to initiate a new Pomodoro session for a fresh task.
+   - This can be achieved by simply hitting the 'Reset' button.
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
+## Manual Testing.
 
-------
+- Ensure that the timer has reset by refreshing the page.
+- Verify the start of a 25-minute timer by pressing the "Start" button.
+- Confirm the initiation of a 5-minute short break timer by clicking the "Short break" button.
+- Check the activation of a 15-minute long break timer by pressing the "Long break" button.
+- Ensure that the timer is reset to 0 minutes by pressing the "Reset" button.
 
-## FAQ about the uptime script
 
-**Why have you added this script?**
+# Validator Testing 
 
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
+- HTM
+ - Code was checked using https://validator.w3.org/
 
-**How will this affect me?**
+ - CSS
+  - No errors were found when passing through the official [(Jigsaw) validator]()
 
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
+- Lighthouse test.
 
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
 
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
+# Deployment
 
-**So….?**
+- The site was deployed to GitHub pages. The steps to deploy are as follows: 
+   - In the GitHub repository, navigate to the Settings tab 
+   - then select 'Pages' from the menu on the left.
+   - From the source section drop-down menu, select the Master Branch
+   - Once the master branch has been selected, the page will be automatically refreshed with a detailed ribbon display to indicate the successful deployment. 
 
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
 
-**Can I opt out?**
-
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
-
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
-
-**Anything more?**
-
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
-
----
-
-Happy coding!
