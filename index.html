@@ -16,10 +16,26 @@
         <div id="pomo-container">
             <div id="pomo-clock">
                   <div id="pomo-timer"></div>
-                  <div id="pmo-timer-actions">
+                  <div>
+                    <input type="text" id="pomo-task" placeholder="Enter your task title here..."/>
+                  </div>
+                  <div id="pomo-timer-actions">
                     <button id="start-pomo">Start</button>
                     <button id="pause-pomo">Pause</button>
                     <button id="stop-pomo">Stop</button>
+                  </div>
+                  <div id="pomo-title">
+                    <h3>Changes made here won't affect your current session</h3>
+                  </div>
+                  <div id="pomo-timer-actions">
+                    <div class="pomo-input">
+                      <label>Work Duration</label>
+                      <input type="number" name="work-input" id="work-input">
+                    </div>
+                    <div class="pomo-input">
+                      <label>Break Duration</label>  
+                      <input type="number" name="break-input" id="break-input">
+                    </div>
                   </div>
             </div>
             <div id="pomo-info">
