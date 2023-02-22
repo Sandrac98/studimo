@@ -1,18 +1,31 @@
+document.addEventListener("DOMContentLoaded", () => {
 
-const pomodoroTimer = document.querySelector('#pomodoro-timer')
-const startButton = document.querySelector('#pomodoro-start')
-const pauseButton = document.querySelector('#pomodoro-pause')
-const stopButton = document.querySelector('#pomodoro-stop')
+const startButton = document.getElementById('start-pomo')
+const stopButton = document.getElementById('stop-pomo')
 
-// Event listeners
+// Variables
+let isTimerRunning = false
+let workSession = 1500 // 25 minutes in seconds
+let timeLeft = 1500
+let breakSession = 300 //5 minutes in seconds
+let timeSpent = 0
+let type = 'Work'
+let taskLabel = document.getElementById('pomo-task')
+let updateWorkDuration
+let updateBreakDuration
+let workDuration = document.getElementById('work-input')
+let breakDuration = document.getElementById('break-input')
+
+workDuration.value = '25'
+breakDuration.value = '5'
+
+let isTimerStopped = true
+
+
+// Button Event listeners
 
 // Start button
 startButton.addEventListener('click', () => {
-  toggleClock()
-})
-
-// Pause button
-pauseButton.addEventListener('click', () => {
   toggleClock()
 })
 
@@ -23,58 +36,48 @@ stopButton.addEventListener('click', () => {
 
 //update work time
 workDuration.addEventListener('input', () =>{
-    updateWorkDuration = minutesToSeconds(workDuration.value)
+    updateWorkDuration = minuteToSeconds(workDuration.value)
 })
 
 
 // update break time 
 breakDuration.addEventListener('input', () => {
-    updateBreakDuration = minutesToSeconds(breakDuration.value)
+    updateBreakDuration = minuteToSeconds(breakDuration.value)
 })
 
-// Variables
-let isClockRunning = false
-let workSession = 1500 // 25 minutes in seconds
-let timeLeft = 1500
-let breakSession = 1500 //5 minutes in seconds
-let type = 'Work'
-let timeSpent = 0
-let taskLabel = document.getElementById('pomo-task')
-let updateWorkDuration
-let updateBreakDuration
-let workDuration = document.getElementById('work-duration')
-let breakDuration = document.getElementById('break-duration')
 
-workDuration.value = '25'
-breakDuration = '5'
-
-let isTimerStopped = true
-
+// converts minutes to seconds from input
+const minuteToSeconds = (mins) => {
+    return mins * 60
+}
 
 
 const toggleClock = (reset) => {
+    togglePlayPauseIcon(reset) 
+    // stop timer
     if (reset) {
-        // stop timer
         stopClock()
     }else {
         if(isTimerStopped) {
             setUpdateTimer()
             isTimerStopped = false
         }
-        if (isClockRunning === true) { 
+        if (isTimerRunning === true) { 
              // pause timer
             clearInterval(clockTimer)
-            isClockRunning = false
+            isTimerRunning = false
         } else {
             //start timer
             clockTimer = setInterval(() => {
             stepDown() 
                 displayTimeLeft()
             }, 1000)  
-            isClockRunning = true  
+            isTimerRunning = true  
         }
+        showStopIcon()
     }
 }
+
 
 const displayTimeLeft = () => {
     const secondsLeft = timeLeft
@@ -83,24 +86,27 @@ const displayTimeLeft = () => {
     const minutes = parseInt(secondsLeft / 60) % 60
     let hours = parseInt(secondsLeft / 3600) 
 // add zeroes if the number is less than 10
-function addZeroes(time) {
+    function addZeroes(time) {
     return time < 10 ? `0${time}` : time
- }
-if (hours > 0) result += `${hours}:`
-result += `${addZeroes(minutes)}:${addZeroes(seconds)}`
-pomodoroTimer.innerText = result.toString()
+    }
+    if (hours > 0) result += `${hours}:`
+    result += `${addZeroes(minutes)}:${addZeroes(seconds)}`
+    clockTimer.innerText = result.toString()
 }
 
 
 const stopClock = () => {
+    setUpdateTimer()
     displaySessionLog(type) // display time spent so in this session
     clearInterval(clockTimer) // reset timer set
-    isClockRunning = false // update variable to know timer has stopped
+    isTimerStopped = true // knows when the timer starts from the first time and starts again after it has been stop
+    isTimerRunning = false // update variable to know timer has stopped
     timeLeft = workSession // reset the time left to original state
     displayTimeLeft() // update timer display
+    type = type === 'Work' ? 'Break' : 'Work' // toggle between work and break 
     timeSpent = 0 // increases time we spend in session
-    type = type === 'Work' ? 'Break' : 'Work' // toggle between work and break
 }
+
 
 // toggle between 'work' and 'break' when timer runs out
 const stepDown = () => {
@@ -114,6 +120,7 @@ const stepDown = () => {
             timeLeft = breakSession
             displaySessionLog('Work')
             type = 'Break'
+            setUpdateTimer()
             if(isTimerStopped){
                 setUpdateTimer()
                 isTimerStopped = false
@@ -123,6 +130,7 @@ const stepDown = () => {
         } else {
             timeLeft = workSession
             type = 'Work'
+            setUpdateTimer()
             if(isTimerStopped){
                 setUpdateTimer()
                 isTimerStopped = false
@@ -144,8 +152,8 @@ const displaySessionLog = (type) => {
     const li = document.createElement('li')
     if (type === 'Work') {
         sessionLabel = taskLabel.value ? taskLabel.value : 'Work'
-        sessionLabel = sessionLabel
-    }else ~{
+        workSessionLabel = sessionLabel
+    }else {
         sessionLabel : 'Break'
     }
     let elapsedTime = parseInt(timeSpent / 60)
@@ -157,18 +165,48 @@ const displaySessionLog = (type) => {
  
 }
 
-// converts minutes to seconds from input
-const minutesToSeconds = (mins) => {
-    return mins = 60
-}
+
 
 //set new time input by user 
 const setUpdateTimer = () => {
     if(type === 'Work') {
-        timeLeft = updateWorkDuration ? updateWorkDuration : workSession
+        timeLeft = updateWorkDuration ? updateWorkDuration : workSession;
         workSession = timeLeft
     }else {
-        timeLeft = updateBreakDuration ? updateBreakDuration : breakDuration
+        timeLeft = updateBreakDuration ? updateBreakDuration : breakDuration;
         breakDuration = timeLeft
     }
 }
+
+// Hide pause button when timer is not working
+const togglePlayPauseIcon = (reset) => {
+    const playIcon = document.getElementById('play-icon')
+    const pauseIcon = document.getElementById('pause-icon')
+    if(reset) {
+        // when timer is reset always revert to play icon
+        if(playIcon.classList.contains('hidden')) {
+            playIcon.classList.remove('hidden')
+        }
+        if(!pauseIcon.classList.contains('hidden')) {
+            pauseIcon.classList.add('hidden')
+        }
+    } else {
+        playIcon.classList.toggle('hidden')
+        pauseIcon.classList.toggle('hidden')
+    }
+}
+
+
+// shows stop button when timer is start
+const showStopIcon = () => {
+    const stopButton = document.getElementById('stop-pomo')
+    stopButton.classList.remove('hidden')
+}
+
+const calculateSessionProgress = () => {
+    const sessionDuration = type === 'Work' ? workDuration : breakDuration 
+    return(timeSpent / sessionDuration) * 10
+}
+
+});
+

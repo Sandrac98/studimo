@@ -1,0 +1,83 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Itim&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    background-color: #5e87f5;
+    font-family: 'Itim', cursive;
+
+}
+
+/*---------------------------------------Logo styling*/
+#logo{
+  
+    font-family: 'Itim', cursive;
+    padding-left: 0.6em;
+    margin-top: 0.6em;
+}
+
+/*---------------------------------------Pomodoro styling*/
+#pomo-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+#pomo-clock {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 40px;
+    padding: 40px 10px;
+}
+
+#pomo-timer-actions {
+    padding: 20px;
+}
+
+
+#pomo-timer-actions button {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+}
+
+input  {
+    border: #194a7a;
+    border-style: solid;
+    font-size: 1.5rem;
+    padding: 4px;
+    border-radius: 50px;
+  }
+
+  ::placeholder {
+    color: #194a7a;
+  }
+
+.hidden {
+    display: none;
+  }
+
+#pomo-title {
+    padding: 10px;
+    font-size: 1.5em;
+}
+
+.pomo-input {
+    display: flex;
+    flex-direction: column;
+    width: 210px;
+    margin-right: 10px;
+    font-size: 1.4rem;
+  }
+
+#pomo-info, #pomo-sessions {
+    font-size: 1.5rem;
+}
+
+
+    

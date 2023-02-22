@@ -15,14 +15,20 @@
         <h1 id="logo">STUDIMO</h1>
         <div id="pomo-container">
             <div id="pomo-clock">
-                  <div id="pomo-timer"></div>
+                  <div id="progress-bar">
+                    $(".progress-bar").loading();
+                  </div>
                   <div>
                     <input type="text" id="pomo-task" placeholder="Enter your task title here..."/>
                   </div>
                   <div id="pomo-timer-actions">
-                    <button id="start-pomo">Start</button>
-                    <button id="pause-pomo">Pause</button>
-                    <button id="stop-pomo">Stop</button>
+                    <button id="start-pomo">
+                      <i class="fas fa-play" id="play-icon"></i>
+                      <i class="fas fa-pause hidden" id="pause-icon"></i>
+                    </button>
+                    <button id="stop-pomo" class="hidden">
+                      <i class="fas fa-stop"></i>
+                    </button>
                   </div>
                   <div id="pomo-title">
                     <h3>Changes made here won't affect your current session</h3>
@@ -43,5 +49,8 @@
               <ul id="pomo-sessions"></ul>
             </div>
         </div>
+
+        <script src="assets/js/script.js"></script> 
+        <script src="progressbar.min.js.map"></script>
     </body>
 </html>
