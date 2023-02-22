@@ -21,6 +21,14 @@ breakDuration.value = '5'
 
 let isTimerStopped = true
 
+const progressBar = new ProgressBar.Circle("#pomo-timer", {
+    strokeWidth: 2,
+    text: {
+      value: "25:00"
+    },
+    trailColor: "#194a7a",
+  });
+
 
 // Button Event listeners
 
@@ -71,6 +79,7 @@ const toggleClock = (reset) => {
             clockTimer = setInterval(() => {
             stepDown() 
                 displayTimeLeft()
+                progressBar.set(calculateSessionProgress())
             }, 1000)  
             isTimerRunning = true  
         }
@@ -91,7 +100,7 @@ const displayTimeLeft = () => {
     }
     if (hours > 0) result += `${hours}:`
     result += `${addZeroes(minutes)}:${addZeroes(seconds)}`
-    clockTimer.innerText = result.toString()
+    progressBar.text.innerText = result.toString()
 }
 
 
