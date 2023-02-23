@@ -9,7 +9,7 @@
 
 }
 
-/*---------------------------------------Logo styling*/
+/*---------------------------------------Logo, title styling*/
 #logo{
   
     font-family: 'Itim', cursive;
@@ -17,6 +17,9 @@
     margin-top: 0.6em;
 }
 
+h3 {
+  font-size: 1.8rem;
+}
 /*---------------------------------------Pomodoro styling*/
 #pomo-container {
     display: flex;
@@ -33,11 +36,10 @@
     justify-content: center;
     align-items: center;
     margin-bottom: 40px;
-    font-size: 1em;
+    font-size: 3em;
 }
-#pomo-timer {
-    color: rgb(230, 7, 7);
-}
+
+
 #pomo-timer-actions {
     padding: 20px;
 }
@@ -79,29 +81,10 @@ input  {
   }
 
 #pomo-info, #pomo-sessions {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
 }
 
-#pomo-clock-circle {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    border-radius: 50%;
-    height: 300px;
-    width: 300px;
-    padding: 200px;
 
-  }
-  
-  #pomo-clock-timer {
-    font-size: 3rem;
-  }
-  
-  #pomo-clock-circle * {
-    color: black;
-  }
 
-progress-bar text {
-    color: #194a7a;
-}
+
+

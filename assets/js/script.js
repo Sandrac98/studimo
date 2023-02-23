@@ -27,6 +27,7 @@ const progressBar = new ProgressBar.Circle("#pomo-timer", {
       value: "25:00"
     },
     trailColor: "#194a7a",
+    color: '#093c66'
   });
 
 
@@ -90,7 +91,7 @@ const toggleClock = (reset) => {
 
 const displayTimeLeft = () => {
     const secondsLeft = timeLeft
-    let result = ''
+    let result = "";
     const seconds = secondsLeft % 60
     const minutes = parseInt(secondsLeft / 60) % 60
     let hours = parseInt(secondsLeft / 3600) 
@@ -112,7 +113,7 @@ const stopClock = () => {
     isTimerRunning = false // update variable to know timer has stopped
     timeLeft = workSession // reset the time left to original state
     displayTimeLeft() // update timer display
-    type = type === 'Work' ? 'Break' : 'Work' // toggle between work and break 
+    type = 'Work'
     timeSpent = 0 // increases time we spend in session
 }
 
@@ -130,22 +131,14 @@ const stepDown = () => {
             displaySessionLog('Work')
             type = 'Break'
             setUpdateTimer()
-            if(isTimerStopped){
-                setUpdateTimer()
-                isTimerStopped = false
-            }
             taskLabel.value = 'Break'
             taskLabel.disabled = true
         } else {
             timeLeft = workSession
             type = 'Work'
             setUpdateTimer()
-            if(isTimerStopped){
-                setUpdateTimer()
-                isTimerStopped = false
-            }
             if(taskLabel.value === 'Break') {
-                taskLabel.value = SessionLabel
+                taskLabel.value = workSessionLabel
             }
             taskLabel.disabled = false
             displaySessionLog('Break')
