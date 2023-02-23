@@ -26,7 +26,7 @@ const progressBar = new ProgressBar.Circle("#pomo-timer", {
     text: {
       value: "25:00"
     },
-    trailColor: "#194a7a",
+    trailColor: "#3573a6",
     color: '#093c66'
   });
 
