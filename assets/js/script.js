@@ -138,7 +138,7 @@ const stepDown = () => {
             type = 'Work'
             setUpdateTimer()
             if(taskLabel.value === 'Break') {
-                taskLabel.value = workSessionLabel
+                taskLabel.value = workSession
             }
             taskLabel.disabled = false
             displaySessionLog('Break')
@@ -154,7 +154,7 @@ const displaySessionLog = (type) => {
     const li = document.createElement('li')
     if (type === 'Work') {
         sessionLabel = taskLabel.value ? taskLabel.value : 'Work'
-        workSessionLabel = sessionLabel
+        workSession = sessionLabel
     }else {
         sessionLabel : 'Break'
     }
