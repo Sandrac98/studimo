@@ -1,25 +1,25 @@
 document.addEventListener("DOMContentLoaded", () => {
 
-const startButton = document.getElementById('start-pomo')
-const stopButton = document.getElementById('stop-pomo')
+const startButton = document.getElementById('start-pomo');
+const stopButton = document.getElementById('stop-pomo');
 
 // Variables
-let isTimerRunning = false
-let workSession = 1500 // 25 minutes in seconds
-let timeLeft = 1500
-let breakSession = 300 //5 minutes in seconds
-let timeSpent = 0
-let type = 'Work'
-let taskLabel = document.getElementById('pomo-task')
-let updateWorkDuration
-let updateBreakDuration
-let workDuration = document.getElementById('work-input')
-let breakDuration = document.getElementById('break-input')
+let isTimerRunning = false;
+let workSession = 1500;// 25 minutes in seconds
+let timeLeft = 1500;
+let breakSession = 300; //5 minutes in seconds
+let timeSpent = 0;
+let type = 'Work';
+let taskLabel = document.getElementById('pomo-task');
+let updateWorkDuration;
+let updateBreakDuration;
+let workDuration = document.getElementById('work-input');
+let breakDuration = document.getElementById('break-input');
 
-workDuration.value = '25'
-breakDuration.value = '5'
+workDuration.value = '25';
+breakDuration.value = '5';
 
-let isTimerStopped = true
+let isTimerStopped = true;
 
 const progressBar = new ProgressBar.Circle("#pomo-timer", {
     strokeWidth: 2,
@@ -36,36 +36,36 @@ const progressBar = new ProgressBar.Circle("#pomo-timer", {
 // Start button
 startButton.addEventListener('click', () => {
   toggleClock()
-})
+});
 
 // Stop button
 stopButton.addEventListener('click', () => {
   toggleClock(true)
-})
+});
 
 //update work time
 workDuration.addEventListener('input', () =>{
     updateWorkDuration = minuteToSeconds(workDuration.value)
-})
+});
 
 
 // update break time 
 breakDuration.addEventListener('input', () => {
     updateBreakDuration = minuteToSeconds(breakDuration.value)
-})
+});
 
 
 // converts minutes to seconds from input
-const minuteToSeconds = (mins) => {
-    return mins * 60
+const minuteToSeconds = mins => {
+    return mins * 60;
 }
 
 
-const toggleClock = (reset) => {
-    togglePlayPauseIcon(reset) 
+const toggleClock = reset => {
+    togglePlayPauseIcon(reset);
     // stop timer
     if (reset) {
-        stopClock()
+        stopClock();
     }else {
         if(isTimerStopped) {
             setUpdateTimer()
@@ -113,7 +113,7 @@ const stopClock = () => {
     isTimerRunning = false // update variable to know timer has stopped
     timeLeft = workSession // reset the time left to original state
     displayTimeLeft() // update timer display
-    type = 'Work'
+    type = type === 'Work' ? 'Break' : 'Work'
     timeSpent = 0 // increases time we spend in session
 }
 
@@ -138,7 +138,7 @@ const stepDown = () => {
             type = 'Work'
             setUpdateTimer()
             if(taskLabel.value === 'Break') {
-                taskLabel.value = workSession
+                taskLabel.value = workSessionLabel
             }
             taskLabel.disabled = false
             displaySessionLog('Break')
