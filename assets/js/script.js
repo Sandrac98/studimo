@@ -1,214 +1,212 @@
 document.addEventListener("DOMContentLoaded", () => {
 
-const startButton = document.getElementById('start-pomo');
-const stopButton = document.getElementById('stop-pomo');
-
-// Variables
-let isTimerRunning = false;
-let workSession = 1500;// 25 minutes in seconds
-let timeLeft = 1500;
-let breakSession = 300; //5 minutes in seconds
-let timeSpent = 0;
-let type = 'Work';
-let taskLabel = document.getElementById('pomo-task');
-let updateWorkDuration;
-let updateBreakDuration;
-let workDuration = document.getElementById('work-input');
-let breakDuration = document.getElementById('break-input');
-
-workDuration.value = '25';
-breakDuration.value = '5';
-
-let isTimerStopped = true;
-
-const progressBar = new ProgressBar.Circle("#pomo-timer", {
-    strokeWidth: 2,
-    text: {
-      value: "25:00"
-    },
-    trailColor: "#3573a6",
-    color: '#093c66'
+    const startButton = document.querySelector("#start-pomo");
+    const stopButton = document.querySelector("#stop-pomo");
+  
+    let isClockRunning = false;
+    // in seconds = 25 mins
+    let workSessionDuration = 1500;
+    let currentTimeLeftInSession = 1500;
+  
+    // in seconds = 5 mins;
+    let breakSessionDuration = 300;
+  
+    let timeSpentInCurrentSession = 0;
+    let type = "Work";
+  
+    let currentTaskLabel = document.querySelector("#pomo-task");
+  
+    let updatedWorkSessionDuration;
+    let updatedBreakSessionDuration;
+  
+    let workDurationInput = document.querySelector("#work-input");
+    let breakDurationInput = document.querySelector("#break-input");
+  
+    workDurationInput.value = "25";
+    breakDurationInput.value = "5";
+  
+    let isClockStopped = true;
+    
+   const progressBar = new ProgressBar.Circle("#pomo-timer", {
+     strokeWidth: 2,
+     text: {
+       value: "25:00"
+     },
+     trailColor: "#194a7a",
+     color: "black" 
+   });
+  
+    // START
+    startButton.addEventListener("click", () => {
+      toggleClock();
+    });
+  
+    // STOP
+    stopButton.addEventListener("click", () => {
+      toggleClock(true);
+    });
+ // UPDATE WORK TIME
+ workDurationInput.addEventListener("input", () => {
+    updatedWorkSessionDuration = minuteToSeconds(workDurationInput.value);
   });
 
+  // UPDATE PAUSE TIME
+  breakDurationInput.addEventListener("input", () => {
+    updatedBreakSessionDuration = minuteToSeconds(breakDurationInput.value);
+  });
 
-// Button Event listeners
-
-// Start button
-startButton.addEventListener('click', () => {
-  toggleClock()
-});
-
-// Stop button
-stopButton.addEventListener('click', () => {
-  toggleClock(true)
-});
-
-//update work time
-workDuration.addEventListener('input', () =>{
-    updateWorkDuration = minuteToSeconds(workDuration.value)
-});
-
-
-// update break time 
-breakDuration.addEventListener('input', () => {
-    updateBreakDuration = minuteToSeconds(breakDuration.value)
-});
-
-
-// converts minutes to seconds from input
-const minuteToSeconds = mins => {
-    return mins * 60;
-}
-
-
-const toggleClock = reset => {
-    togglePlayPauseIcon(reset);
-    // stop timer
-    if (reset) {
+    const minuteToSeconds = mins => {
+      return mins * 60;
+    };
+  
+    const toggleClock = reset => {
+      togglePlayPauseIcon(reset);
+      if (reset) {
         stopClock();
-    }else {
-        if(isTimerStopped) {
-            setUpdateTimer()
-            isTimerStopped = false
+      } else {
+        if (isClockStopped) {
+          setUpdatedTimers();
+          isClockStopped = false;
         }
-        if (isTimerRunning === true) { 
-             // pause timer
-            clearInterval(clockTimer)
-            isTimerRunning = false
+  
+        if (isClockRunning === true) {
+          // pause
+          clearInterval(clockTimer);
+          // update icon to the play one
+          // set the vale of the button to start or pause
+          isClockRunning = false;
         } else {
-            //start timer
-            clockTimer = setInterval(() => {
-            stepDown() 
-                displayTimeLeft()
-                progressBar.set(calculateSessionProgress())
-            }, 1000)  
-            isTimerRunning = true  
+          // start
+          clockTimer = setInterval(() => {
+            stepDown();
+            displayCurrentTimeLeftInSession();
+            progressBar.set(calculateSessionProgress());
+          }, 1000);
+          isClockRunning = true;
         }
-        showStopIcon()
-    }
-}
-
-
-const displayTimeLeft = () => {
-    const secondsLeft = timeLeft
-    let result = "";
-    const seconds = secondsLeft % 60
-    const minutes = parseInt(secondsLeft / 60) % 60
-    let hours = parseInt(secondsLeft / 3600) 
-// add zeroes if the number is less than 10
-    function addZeroes(time) {
-    return time < 10 ? `0${time}` : time
-    }
-    if (hours > 0) result += `${hours}:`
-    result += `${addZeroes(minutes)}:${addZeroes(seconds)}`
-    progressBar.text.innerText = result.toString()
-}
-
-
-const stopClock = () => {
-    setUpdateTimer()
-    displaySessionLog(type) // display time spent so in this session
-    clearInterval(clockTimer) // reset timer set
-    isTimerStopped = true // knows when the timer starts from the first time and starts again after it has been stop
-    isTimerRunning = false // update variable to know timer has stopped
-    timeLeft = workSession // reset the time left to original state
-    displayTimeLeft() // update timer display
-    type = type === 'Work' ? 'Break' : 'Work'
-    timeSpent = 0 // increases time we spend in session
-}
-
-
-// toggle between 'work' and 'break' when timer runs out
-const stepDown = () => {
-    if (timeLeft > 0) {
-        timeLeft--
-        timeSpent++
-    } else if (timeLeft === 0) {
-        timeSpent = 0 
-        //if timer is over switch from work to break and viceversa
-        if(type === 'Work') {
-            timeLeft = breakSession
-            displaySessionLog('Work')
-            type = 'Break'
-            setUpdateTimer()
-            taskLabel.value = 'Break'
-            taskLabel.disabled = true
+        showStopIcon();
+      }
+    };
+  
+    const displayCurrentTimeLeftInSession = () => {
+      const secondsLeft = currentTimeLeftInSession;
+      let result = "";
+      const seconds = secondsLeft % 60;
+      const minutes = parseInt(secondsLeft / 60) % 60;
+      let hours = parseInt(secondsLeft / 3600);
+      // add leading zeroes if it's less than 10
+      function addLeadingZeroes(time) {
+        return time < 10 ? `0${time}` : time;
+      }
+      if (hours > 0) result += `${hours}:`;
+      result += `${addLeadingZeroes(minutes)}:${addLeadingZeroes(seconds)}`;
+      progressBar.text.innerText = result.toString();
+    };
+  
+    const stopClock = () => {
+      setUpdatedTimers();
+      displaySessionLog(type);
+      clearInterval(clockTimer);
+      isClockStopped = true;
+      isClockRunning = false;
+      currentTimeLeftInSession = workSessionDuration;
+      displayCurrentTimeLeftInSession();
+      type = "Work";
+      timeSpentInCurrentSession = 0;
+    };
+  
+    const stepDown = () => {
+      if (currentTimeLeftInSession > 0) {
+        // decrease time left / increase time spent
+        currentTimeLeftInSession--;
+        timeSpentInCurrentSession++;
+      } else if (currentTimeLeftInSession === 0) {
+        timeSpentInCurrentSession = 0;
+        // Timer is over -> if work switch to break, viceversa
+        if (type === "Work") {
+          currentTimeLeftInSession = breakSessionDuration;
+          displaySessionLog("Work");
+          type = "Break";
+          setUpdatedTimers();
+          // new
+          currentTaskLabel.value = "Break";
+          currentTaskLabel.disabled = true;
         } else {
-            timeLeft = workSession
-            type = 'Work'
-            setUpdateTimer()
-            if(taskLabel.value === 'Break') {
-                taskLabel.value = workSessionLabel
-            }
-            taskLabel.disabled = false
-            displaySessionLog('Break')
+          currentTimeLeftInSession = workSessionDuration;
+          type = "Work";
+          setUpdatedTimers();
+          // new
+          if (currentTaskLabel.value === "Break") {
+            currentTaskLabel.value = workSessionLabel;
+          }
+          currentTaskLabel.disabled = false;
+          displaySessionLog("Break");
         }
-    }
-    displayTimeLeft()
-}
-
-// display session log
-const displaySessionLog = (type) => {
-    const sessionList = document.getElementById('pomo-sessions')
-    // append li to ul
-    const li = document.createElement('li')
-    if (type === 'Work') {
-        sessionLabel = taskLabel.value ? taskLabel.value : 'Work'
-        workSession = sessionLabel
-    }else {
-        sessionLabel : 'Break'
-    }
-    let elapsedTime = parseInt(timeSpent / 60)
-    elapsedTime = elapsedTime > 0 ? elapsedTime : '< 1'
-
-    const text = document.createTextNode(`${sessionLabel} : ${elapsedTime} min`)
-    li.appendChild(text)
-    sessionList.appendChild(li)
- 
-}
-
-
-
-//set new time input by user 
-const setUpdateTimer = () => {
-    if(type === 'Work') {
-        timeLeft = updateWorkDuration ? updateWorkDuration : workSession;
-        workSession = timeLeft
-    }else {
-        timeLeft = updateBreakDuration ? updateBreakDuration : breakDuration;
-        breakDuration = timeLeft
-    }
-}
-
-// Hide pause button when timer is not working
-const togglePlayPauseIcon = (reset) => {
-    const playIcon = document.getElementById('play-icon')
-    const pauseIcon = document.getElementById('pause-icon')
-    if(reset) {
-        // when timer is reset always revert to play icon
-        if(playIcon.classList.contains('hidden')) {
-            playIcon.classList.remove('hidden')
+      }
+      displayCurrentTimeLeftInSession();
+    };
+  
+    const displaySessionLog = type => {
+      const sessionsList = document.querySelector("#pomo-sessions");
+      // append li to it
+      const li = document.createElement("li");
+      if (type === "Work") {
+        sessionLabel = currentTaskLabel.value ? currentTaskLabel.value : "Work";
+        workSessionLabel = sessionLabel;
+      } else {
+        sessionLabel = "Break";
+      }
+      let elapsedTime = parseInt(timeSpentInCurrentSession / 60);
+      elapsedTime = elapsedTime > 0 ? elapsedTime : "< 1";
+  
+      const text = document.createTextNode(
+        `${sessionLabel} : ${elapsedTime} min`
+      );
+      li.appendChild(text);
+      sessionsList.appendChild(li);
+    };
+  
+    const setUpdatedTimers = () => {
+      if (type === "Work") {
+        currentTimeLeftInSession = updatedWorkSessionDuration
+          ? updatedWorkSessionDuration
+          : workSessionDuration;
+        workSessionDuration = currentTimeLeftInSession;
+      } else {
+        currentTimeLeftInSession = updatedBreakSessionDuration
+          ? updatedBreakSessionDuration
+          : breakSessionDuration;
+        breakSessionDuration = currentTimeLeftInSession;
+      }
+    };
+  
+    const togglePlayPauseIcon = reset => {
+      const playIcon = document.querySelector("#play-icon");
+      const pauseIcon = document.querySelector("#pause-icon");
+      if (reset) {
+        // when resetting -> always revert to play icon
+        if (playIcon.classList.contains("hidden")) {
+          playIcon.classList.remove("hidden");
         }
-        if(!pauseIcon.classList.contains('hidden')) {
-            pauseIcon.classList.add('hidden')
+        if (!pauseIcon.classList.contains("hidden")) {
+          pauseIcon.classList.add("hidden");
         }
-    } else {
-        playIcon.classList.toggle('hidden')
-        pauseIcon.classList.toggle('hidden')
-    }
-}
-
-
-// shows stop button when timer is start
-const showStopIcon = () => {
-    const stopButton = document.getElementById('stop-pomo')
-    stopButton.classList.remove('hidden')
-}
-
-const calculateSessionProgress = () => {
-    const sessionDuration = type === 'Work' ? workDuration : breakDuration 
-    return(timeSpent / sessionDuration) * 10
-}
-
-});
-
+      } else {
+        playIcon.classList.toggle("hidden");
+        pauseIcon.classList.toggle("hidden");
+      }
+    };
+  
+    const showStopIcon = () => {
+      const stopButton = document.querySelector("#stop-pomo");
+      stopButton.classList.remove("hidden");
+    };
+  
+    const calculateSessionProgress = () => {
+      // calculate the completion rate of this session
+      const sessionDuration =
+        type === "Work" ? workSessionDuration : breakSessionDuration;
+      return (timeSpentInCurrentSession / sessionDuration) * 10;
+    };
+  
+  });

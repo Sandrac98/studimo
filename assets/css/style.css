@@ -85,14 +85,15 @@ input  {
 }
 
 
-/*------------------------------------------- Information styling */
+/*------------------------------------------- Information styling*/
 #how-to-use-it {
-  padding-top: 20px;
-  margin-left: 8px;
+  padding-top: 90px;
+  margin: 35px;
 }
 
 #pomo-tips{
   font-size: 1.5em;
-  padding: 5px;
+  padding: 35px;
+  line-height: 40px;
 }
-
+ 
