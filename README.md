@@ -1,14 +1,12 @@
+Welcome to STUDIMO, your go-to destination for boosting productivity and focus through the Pomodoro Technique. Offers an easy-to-use timer that allows you to optimize your study sessions, a to-do list, and comprehensive information on how to make the most of the technique. Whether you're a student, professional, or just looking to improve your productivity, STUDIMO has everything you need to achieve your goals. By breaking down your work into manageable intervals with timed breaks in between, you can accomplish more in less time and with less stress.
 
-
-STUDIMO is here to assist you in increasing your focus and productivity through the Pomodoro Technique. Our website features a user-friendly timer to optimize your study sessions. Whether you're a student, professional, or seeking to improve productivity, STUDIMO has everything you need to reach your objectives. Give it a try now and see the impact the Pomodoro Technique can have on your life!
+Experience the benefits of the Pomodoro Technique for yourself by giving STUDIMO a try today!
 
 
 The goals of this website are:
 * Help individuals increase their productivity and focus through the use of the Pomodoro Technique
 * Provide timer that implements the technique and assists users in breaking down their work into manageable chunks of time with breaks in between
-* Encourage visitor to  get more done in less time and with less stress.
-
-
+* Encourage visitor to  get more work done in less time and with less stress.
 
 # UX
 ## Ideal client
@@ -47,8 +45,14 @@ The goals of this website are:
 
 ## Colour Pallet
 
-I chose to use various shades of blue for STUDIMO with the intention of helping students stay focused during their study sessions. Blue is a color that is known to evoke feelings of calm, tranquility, and stability, which makes it a perfect choice for spaces where relaxation is encouraged, such as bedrooms and bathrooms. Furthermore, blue is associated with freedom, imagination, and inspiration, making it an ideal color for creative and innovative environments, as it is believed to enhance the mind and foster self-expression. Moreover, the color blue has been shown to have a soothing effect on both the body and mind, making it a great choice for promoting balance and overall well-being.
-![Colour Pallet](./img/color-pallete.png)
+I chose to use various shades of blue for STUDIMO with the intention of helping students stay focused during their study sessions. There is no definitive scientific evidence to support the claim that blue is universally good for studying, but certain studies have suggested that blue may have a positive effect on cognitive performance and concentration for some people.
+
+One potential reason why blue may be beneficial for studying is its calming and soothing properties. Blue is often associated with feelings of relaxation and tranquility, which can help reduce stress and anxiety levels that might otherwise interfere with focus and productivity. By promoting a sense of calm, blue may help students concentrate on their work more effectively and for longer periods of time.
+
+Another possible reason why blue might be beneficial for studying is that it can help stimulate the brain and enhance mental alertness. Blue is a highly stimulating color that has been shown to increase brain activity and cognitive function, which can improve memory recall and the ability to process information. This increased brain activity may help students better retain and recall important information when studying.
+
+Overall, while the effects of blue may vary from person to person, incorporating blue into your study environment, such as through the use of blue lighting or accents, may be worth considering if you find it helps you focus and concentrate better.
+[Colour Pallet](https://colorkit.co/palette/87b9ff-93b9ff-0075db-80baed-000000/)
 
 
 # Testing  

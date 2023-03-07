@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", () => {
      text: {
        value: "25:00"
      },
-     trailColor: "#194a7a",
+     trailColor: "#0075db",
      color: "black" 
    });
   
