@@ -1,0 +1,291 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Itim&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Itim', cursive;
+}
+
+#studimo, html {
+  background-color: #93b9ff;
+}
+
+h3 {
+  font-size: 1.8rem;
+}
+
+/*------------------------------------------------------------------------------------------- NAVBAR STYLING*/
+/*--this code was taken from https://codepen.io/MinzCode/pen/bGexzXw */
+nav {
+	position: fixed;
+	z-index: 10;
+	left: 0;
+	right: 0;
+	top: 0;
+	padding: 0 5%;
+	height: 100px;
+	background-color: #2149a1;
+}
+nav #logo {
+	float: left;
+	width: 30%;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	font-size: 24px;
+	color: #87b9ff;
+}
+
+nav .links {
+	float: right;
+	padding: 0;
+	margin: 0;
+	width: 60%;
+	height: 100%;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+  
+}
+nav .links li {
+	list-style: none;
+}
+nav .links a {
+	display: block;
+	padding: 1em;
+	font-size: 16px;
+	font-weight: bold;
+	color: #87b9ff;
+	text-decoration: none;
+}
+#nav-toggle {
+	position: absolute;
+	top: -100px;
+}
+nav .icon-burger {
+	display: none;
+	position: absolute;
+	right: 5%;
+	top: 50%;
+	transform: translateY(-50%);
+}
+nav .icon-burger .line {
+	width: 30px;
+	height: 5px;
+	background-color:#87b9ff;
+	margin: 5px;
+	border-radius: 3px;
+	transition: all .3s ease-in-out;
+}
+/*---------------------------------------Pomodoro styling*/
+#pomo-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    background-color:#93b9ff;
+    padding-top: 110px;
+}
+
+
+#pomo-clock{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 40px;
+    font-size: 3em;
+    background-color:#93b9ff;
+}
+
+
+#pomo-timer-actions {
+    padding: 20px;
+    background-color:#93b9ff;
+}
+
+
+#pomo-timer-actions button {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    background-color:#93b9ff;
+}
+
+input  {
+    border: #0075db;
+    border-style: solid;
+    font-size: 1.5rem;
+    padding: 4px;
+    border-radius: 50px;
+    background-color: #93b9ff;
+  }
+
+  ::placeholder {
+    color: #194a7a;
+    background-color: #93b9ff;
+  }
+
+.hidden {
+    display: none;
+  }
+
+#pomo-title {
+    padding: 10px;
+    font-size: 1.5em;
+}
+
+.pomo-input {
+    display: flex;
+    flex-direction: column;
+    width: 210px;
+    margin-right: 10px;
+    font-size: 1.4rem;
+    background-color:#93b9ff;
+  }
+
+ #pomo-sessions {
+    font-size: 1.8rem;
+
+}
+
+
+/*------------------------------------------- Information styling*/
+#how-to-use-it {
+  padding-top: 120px;
+  margin: 35px;
+  background-color:#93b9ff;
+}
+
+#pomo-tips{
+  font-size: 1.5em;
+  padding: 35px;
+  line-height: 40px;
+}
+
+
+
+/*---------------------------------------------------TO-DO list styling */
+#to-do-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  background-color:#93b9ff;
+  padding-top: 140px;
+}
+
+#newtask input {
+  max-width: 100%;
+  height: 25px;
+  padding: 6px;
+  color: black;
+  font-weight: bold;
+  position: relative;
+  border-radius: 25px;
+  font-family: 'Itim', cursive, sans-serif;
+  font-size: 1.5rem;
+  border: #0075db;
+  border-style: solid;
+  margin-bottom: 20px;
+}
+
+#newtask ::placeholder{
+  font-weight: 100;
+}
+
+#newTaskButton{
+  font-size: 22px;
+  background-color: transparent;
+  border: solid;
+  border-color: #0075db;
+  cursor: pointer;
+  width: 47px;
+  height: 45px;
+  border-radius: 25px;
+}
+
+.task {
+  border: 3px solid #0075db;
+  cursor: pointer;
+  background-color:#93b9ff;
+  height: 25px;
+  max-width: 700px;
+  margin-bottom: 8px;
+  padding: 5px 10px;
+  display: flex;
+  font-family: 'Itim', cursive ,sans-serif;
+  font-size: 1.5rem;
+  font-weight: bold;
+  border-radius: 50px;
+  justify-content: space-between;
+}
+
+
+.task button{
+  background-color: #6583e5;
+  color: rgb(43, 41, 41);
+  border: none;
+  cursor: pointer;
+  outline: none;
+  height: 100%;
+  width: 40px;
+  border-radius: 5px;
+  margin-left: 10px;
+
+}
+
+
+/*----------------------------------------------------media queries*/
+@media (min-width: 300px) and (max-width: 600px) {
+  header {
+    max-width: 100%;
+  }
+  /*-----------------------NAVBAR STYLING*/
+  nav .logo {
+      float: none;
+      width: 150px;
+      justify-content: center;
+    }
+    nav .links {
+      float: none;
+      position: fixed;
+      z-index: 9;
+      left: 0;
+      right: 0;
+      top: 100px;
+      bottom: 100%;
+      width: auto;
+      height: auto;
+      flex-direction: column;
+      justify-content: space-evenly;
+      background-color: #2149a1b7;
+      overflow: hidden;
+      box-sizing: border-box;
+      transition: all .5s ease-in-out;
+    }
+    nav .links a {
+      font-size: 22px;
+      color: #85a7f5;
+      text-transform: uppercase;
+    }
+   
+    nav :checked ~ .links {
+      bottom: 0;
+    }
+    nav .icon-burger {
+      display: block;
+    }
+    nav :checked ~ .icon-burger .line:nth-child(1) {
+      transform: translateY(10px) rotate(225deg);
+    }
+    nav :checked ~ .icon-burger .line:nth-child(3) {
+      transform: translateY(-10px) rotate(-225deg);
+    }
+    nav :checked ~ .icon-burger .line:nth-child(2) {
+      opacity: 0;
+    }
+  }
