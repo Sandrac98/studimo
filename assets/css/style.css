@@ -146,9 +146,22 @@ input  {
     background-color:#93b9ff;
   }
 
+
+#pomo-info h2 {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
  #pomo-sessions {
     font-size: 1.8rem;
-
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
 }
 
 
