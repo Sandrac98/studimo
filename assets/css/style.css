@@ -189,6 +189,7 @@ input  {
   align-items: center;
   background-color:#93b9ff;
   padding-top: 140px;
+  padding-bottom: 344px;
 }
 
 #newtask input {
@@ -225,7 +226,7 @@ input  {
   border: 3px solid #0075db;
   cursor: pointer;
   background-color:#93b9ff;
-  height: 25px;
+  height: 35px;
   max-width: 700px;
   margin-bottom: 8px;
   padding: 5px 10px;
@@ -254,13 +255,10 @@ input  {
 
 /*----------------------------------------------------media queries*/
 @media (min-width: 300px) and (max-width: 600px) {
-  header {
-    max-width: 100%;
-  }
   /*-----------------------NAVBAR STYLING*/
   nav .logo {
       float: none;
-      width: 150px;
+      width: 100px;
       justify-content: center;
     }
     nav .links {
@@ -301,4 +299,69 @@ input  {
     nav :checked ~ .icon-burger .line:nth-child(2) {
       opacity: 0;
     }
+
+
+    #pomo-title  h3{
+      font-size: 29px;
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      justify-content: center;
+      align-items: center;
+      margin: 15px;
   }
+
+  #to-do-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    background-color: #93b9ff;
+    padding-top: 140px;
+    padding-bottom: 244px;
+  }
+  
+  #newTaskButton {
+    font-size: 27px;
+    background-color: transparent;
+    border: solid;
+    border-color: #0075db;
+    cursor: pointer;
+    width: 47px;
+    height: 45px;
+    border-radius: 25px;
+  }
+
+  #newtask input {
+      max-width: 60%;
+      height: 25px;
+      padding: 6px;
+      color: black;
+      font-weight: bold;
+      position: relative;
+      border-radius: 25px;
+      font-family: 'Itim', cursive, sans-serif;
+      font-size: 1.5rem;
+      border: #0075db;
+      border-style: solid;
+      margin-bottom: 20px;
+      margin-left: 45px;
+}
+.task {
+  border: 3px solid #0075db;
+  cursor: pointer;
+  background-color: #93b9ff;
+  height: 25px;
+  width: 292px;
+  margin-bottom: 10px;
+  margin-left: 38px;
+  padding: 5px 11px;
+  display: flex;
+  font-family: 'Itim', cursive ,sans-serif;
+  font-size: 25px;
+  font-weight: bold;
+  border-radius: 50px;
+  justify-content: space-between;
+}
+}
