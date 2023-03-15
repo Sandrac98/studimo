@@ -9,7 +9,7 @@
 }
 
 body{
-  max-width: 2500px;
+  max-width: 100%;
   height: auto;
   margin-right: auto;
   margin-left: auto;
@@ -17,8 +17,8 @@ body{
 
 #studimo, html {
   background-color: #93b9ff;
+  max-width: 100%;
 }
-
 
 /*------------------------------------------------------------------------------------------- NAVBAR STYLING*/
 /*--this code was taken from https://codepen.io/MinzCode/pen/bGexzXw */
@@ -38,7 +38,7 @@ nav #logo {
 	height: 100%;
 	display: flex;
 	align-items: center;
-	font-size: 24px;
+	font-size: 14px;
 	color: #87b9ff;
 }
 
@@ -113,10 +113,11 @@ nav .icon-burger .line {
 
 
 #pomo-timer-actions button {
-    height: 50px;
-    width: 50px;
-    border-radius: 50%;
-    background-color:#93b9ff;
+  height: 50px;
+  width: 50px;
+  border-radius: 50px;
+  border: 2px #194a7a;
+  background-color:#93b9ff;
 }
 
 input  {
@@ -137,9 +138,10 @@ input  {
     display: none;
   }
 
-#pomo-title {
+
+#pomo-title h2  {
     padding: 10px;
-    font-size: 1.5em;
+    font-size: 40px;
 }
 
 .pomo-input {
@@ -261,59 +263,98 @@ input  {
 /*----------------------------------------------------media queries*/
 @media (min-width: 300px) and (max-width: 600px) {
   /*-----------------------NAVBAR STYLING*/
-  nav .logo {
-      float: none;
-      width: 100px;
-      justify-content: center;
-    }
-    nav .links {
-      float: none;
-      position: fixed;
-      z-index: 9;
-      left: 0;
-      right: 0;
-      top: 100px;
-      bottom: 100%;
-      width: auto;
-      height: auto;
+  header{
+    max-width: 100%;
+  }
+  nav {
+    position: fixed;
+    z-index: 10;
+    left: 0;
+    right: 0;
+    top: 0;
+    padding: 0 5%;
+    height: 100px;
+    background-color: #2149a1;
+  }
+
+  nav #logo {
+    float: none;
+    width: 30%;
+    align-items: center;
+  }
+  nav .links {
+    float: none;
+    position: fixed;
+    z-index: 9;
+    left: 0;
+    right: 0;
+    top: 100px;
+    bottom: 100%;
+    width: auto;
+    height: auto;
+    flex-direction: column;
+    justify-content: space-evenly;
+    background-color: #2149a1a1;
+    overflow: hidden;
+    box-sizing: border-box;
+    transition: all .5s ease-in-out;
+  }
+  nav .links a {
+    font-size: 28px;
+    color: #287df5;
+    text-transform: uppercase;
+  }
+ 
+  nav :checked ~ .links {
+    bottom: 0;
+  }
+  nav .icon-burger {
+    display: block;
+  }
+  nav :checked ~ .icon-burger .line:nth-child(1) {
+    transform: translateY(10px) rotate(225deg);
+  }
+  nav :checked ~ .icon-burger .line:nth-child(3) {
+    transform: translateY(-10px) rotate(-225deg);
+  }
+  nav :checked ~ .icon-burger .line:nth-child(2) {
+    opacity: 0;
+  }
+ #studimo{
+  max-width: 100%;
+  padding: 0;
+  margin: 0;
+ }
+ 
+    #pomo-container {
+      display: flex;
       flex-direction: column;
-      justify-content: space-evenly;
-      background-color: #2149a1b7;
-      overflow: hidden;
-      box-sizing: border-box;
-      transition: all .5s ease-in-out;
-    }
-    nav .links a {
-      font-size: 22px;
-      color: #85a7f5;
-      text-transform: uppercase;
-    }
-   
-    nav :checked ~ .links {
-      bottom: 0;
-    }
-    nav .icon-burger {
-      display: block;
-    }
-    nav :checked ~ .icon-burger .line:nth-child(1) {
-      transform: translateY(10px) rotate(225deg);
-    }
-    nav :checked ~ .icon-burger .line:nth-child(3) {
-      transform: translateY(-10px) rotate(-225deg);
-    }
-    nav :checked ~ .icon-burger .line:nth-child(2) {
-      opacity: 0;
-    }
+      max-width: 100%;
+      justify-content: center;
+      align-items: center;
+      background-color:#93b9ff;
+      padding-top: 110px;
+  }
 
+     #pomo-clock {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 40px;
+      font-size: 3em;
+      background-color: #93b9ff;
+      max-width: 100%;
+  }
 
-    #pomo-title  h3{
+    #pomo-title h2{
       font-size: 29px;
       display: flex;
       flex-direction: column;
       width: 100%;
       justify-content: center;
       align-items: center;
-      margin: 15px;
+      margin-left: 31px;
   }
 
   #to-do-container {

@@ -5,7 +5,7 @@ Experience the benefits of the Pomodoro Technique for yourself by giving STUDIMO
 
 [View deployed site here](https://sandrac98.github.io/Studimo./)
 
-![Responsive Mockup](/mockup.png)
+![Responsive Mockup](./assets/readme-images/mockup.png)
 
 
 The goals of this website are:
@@ -92,12 +92,12 @@ The website was tested for responsiveness using the Google Chrome browser and th
  - Code was checked using https://validator.w3.org/ error showed in the results is explained at the unfixed bug section
 
  - CSS
-  - No errors were found when passing through the official [(Jigsaw) validator](/css-validation.png)
+  - No errors were found when passing through the official [(Jigsaw) validator](./assets/readme-images/css-validation.png)
 
 - Lighthouse test.
 
 # Unfixed Bugs
- - I used the W3 Validator to check each page of the website and found some errors in the navbar. However, this code was sourced from another website and I have included a link to the original source in the code. As a result, I have not attempted to fix the errors highlighted by the validator. [navBar-error](/navbar-error.png)
+ - I used the W3 Validator to check each page of the website and found some errors in the navbar. However, this code was sourced from another website and I have included a link to the original source in the code. As a result, I have not attempted to fix the errors highlighted by the validator. [navBar-error](./assets/readme-images/navbar-error.png)
 
 # Deployment
 
