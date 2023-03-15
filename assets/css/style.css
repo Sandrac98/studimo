@@ -116,7 +116,10 @@ nav .icon-burger .line {
   height: 50px;
   width: 50px;
   border-radius: 50px;
-  background-color:#194a7a;
+  background-color: transparent;
+  border: solid;
+  border-color: #0075db;
+  cursor: pointer;
 }
 
 input  {
