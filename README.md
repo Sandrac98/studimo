@@ -1,12 +1,18 @@
+# STUDIMO
 Welcome to STUDIMO, your go-to destination for boosting productivity and focus through the Pomodoro Technique. Offers an easy-to-use timer that allows you to optimize your study sessions, a to-do list, and comprehensive information on how to make the most of the technique. Whether you're a student, professional, or just looking to improve your productivity, STUDIMO has everything you need to achieve your goals. By breaking down your work into manageable intervals with timed breaks in between, you can accomplish more in less time and with less stress.
 
 Experience the benefits of the Pomodoro Technique for yourself by giving STUDIMO a try today!
+
+[View deployed site here](https://sandrac98.github.io/Studimo./)
+
+![Responsive Mockup](/mockup.png)
 
 
 The goals of this website are:
 * Help individuals increase their productivity and focus through the use of the Pomodoro Technique
 * Provide timer that implements the technique and assists users in breaking down their work into manageable chunks of time with breaks in between
 * Encourage visitor to  get more work done in less time and with less stress.
+
 
 # UX
 ## Ideal client
@@ -22,25 +28,24 @@ The goals of this website are:
 
 1. As a student, I want to be able to set a timer for 25-minute study sessions and 5-minute breaks, so I can stay focused and refreshed during my study sessions.
 
-2. As a freelance worker, I want to be able to track my work progress and stay on schedule with the help of the Pomodoro Technique, so I can meet my deadlines and increase my productivity.
+2. As a language learner, I want to be able to use the Pomodoro Technique to efficiently practice my language skills, so I can make faster progress and achieve my learning goals.
 
-3. As a project manager, I want to be able to assign tasks to team members and monitor their progress using the Pomodoro Technique, so I can effectively manage our project and meet our goals.
-
-4. As a language learner, I want to be able to use the Pomodoro Technique to efficiently practice my language skills, so I can make faster progress and achieve my learning goals.
-
-5. As a busy professional, I want to be able to easily use the Pomodoro Technique to break down my work into manageable chunks, so I can stay focused and reduce stress throughout the workday.
+3. As a busy professional, I want to be able to easily use the Pomodoro Technique to break down my work into manageable chunks, so I can stay focused and reduce stress throughout the workday.
 
 
 # Features 
 ## Existing Features
+ The website's navigation bar is designed to be responsive, appearing on every page and remaining fixed in place. Its layout and appearance adjust according to different screen sizes and devices, with a hamburger menu replacing it on smaller screens. The navigation bar's purpose is to make navigation between different parts of the website easier, eliminating the need for users to rely on the back button.
 
-- Timer: The main component of a STUDIMO is the timer, which allows users to set a 25-minute work session, followed by a 5-minute break.
+- Timer: The fundamental feature of a STUDIMO is its timer, which is initially set to a 25-minute work interval followed by a 5-minute break - the recommended time for implementing the Pomodoro technique. However, the timer is entirely customizable to accommodate the user's preferred session duration. Additionally, users can rename the timer to keep track of the time they've allocated to a particular task.
 
-- Reset button:  Allows users to restart or reset the timer. This feature can be useful when the user wants to repeat the Pomodoro cycle, for example, if they need to take a longer break or if they want to repeat the cycle with a different task.
+- Pause/Stop Button: Incorporating a pause and stop button in a Pomodoro timer offers various advantages such as flexibility, efficiency, and control. With the ability to pause or stop the timer, users have complete control over their Pomodoro sessions, which gives them the assurance that they won't need to restart the timer and lose their progress. This control enhances the user's overall sense of peace of mind and empowers them to manage their time more effectively.
+
+- To-do List: Studimo also incorporates a to-do list feature that enables users to monitor the tasks they need to accomplish.
 
 ## Features Left to Implement
 
-- I would like to implement the capability to create an account for convenient tracking of all sessions conducted.
+- I would like to implement the option to create an account for convenient tracking of all sessions conducted.
 - I would like to incorporate the option to integrate with the calendar app for effective monitoring of future events.
 
 ## Colour Pallet
@@ -62,34 +67,37 @@ The website was tested for responsiveness using the Google Chrome browser and th
 
 ## User Stories Testing.
 * As a productivity-focused user, I desire the ability to customize my Pomodoro timer to 25 minutes, allowing for a uninterrupted work session.
-   - This can be achieved by simply hitting the 'Study' button.
+   - This can be achieved by simply hitting the 'Play' button.
 
 * As a visually-oriented user, I desire the ability to view a visual representation of my Pomodoro timer, making it easier to track the remaining time for my work session.
    - This can be achieved by checking the time left on the current session.
 
 
 * If I have completed a task within the designated time, I may choose to reset the timer in order to initiate a new Pomodoro session for a fresh task.
-   - This can be achieved by simply hitting the 'Reset' button.
+   - This can be achieved by simply renaming the timer and adjusting its duration to suit the user's preferences.
 
 ## Manual Testing.
 
 - Ensure that the timer has reset by refreshing the page.
-- Verify the start of a 25-minute timer by pressing the "Start" button.
-- Confirm the initiation of a 5-minute short break timer by clicking the "Short break" button.
-- Check the activation of a 15-minute long break timer by pressing the "Long break" button.
-- Ensure that the timer is reset to 0 minutes by pressing the "Reset" button.
+- Verify the start of a 25-minute timer by pressing the "Play" button.
+- Verify the start of a 5 minutes brake after a 25 minutes session.
+- Verify the timer and break lenght can be customize after the timer has been stopped.
+- Verify the to-do list ask the user to enter the name of the task after pressing the "+" button.
+- Verify the "erase" button works when pressed to eliminate the task on the to-do list.
 
 
 # Validator Testing 
 
 - HTM
- - Code was checked using https://validator.w3.org/
+ - Code was checked using https://validator.w3.org/ error showed in the results is explained at the unfixed bug section
 
  - CSS
-  - No errors were found when passing through the official [(Jigsaw) validator]()
+  - No errors were found when passing through the official [(Jigsaw) validator](/css-validation.png)
 
 - Lighthouse test.
 
+# Unfixed Bugs
+ - I used the W3 Validator to check each page of the website and found some errors in the navbar. However, this code was sourced from another website and I have included a link to the original source in the code. As a result, I have not attempted to fix the errors highlighted by the validator. [navBar-error](/navbar-error.png)
 
 # Deployment
 

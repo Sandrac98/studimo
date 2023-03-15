@@ -40,28 +40,27 @@
                   <div id="pomo-timer-actions">
                     <button id="start-pomo">
                       <i class="fas fa-play" id="play-icon"></i>
-                      <i class="fas fa-pause hidden" id="pause-icon"></i>
+                      <i class="fas fa-pause hidden" id="pause-icon" aria-label="play/pauseButton"></i>
                     </button>
                     <button id="stop-pomo" class="hidden">
-                      <i class="fas fa-stop"></i>
+                      <i class="fas fa-stop" aria-label="stopButton"></i>
                     </button>
                   </div>
                   <div id="pomo-title">
-                    <h3>Changes made here won't affect your current session</h3>
+                    <h1>Changes made here won't affect your current session</h1>
                   </div>
-                  <div id="pomo-timer-actions">
                     <div class="pomo-input">
                       <label>Work Duration</label>
-                      <input type="number" name="work-input" id="work-input">
+                      <input type="number" name="work-input" id="work-input" aria-label="inputWorkLenght"> 
                     </div>
                     <div class="pomo-input">
                       <label>Break Duration</label>  
-                      <input type="number" name="break-input" id="break-input">
+                      <input type="number" name="break-input" id="break-input" aria-label="inputBreakLenght">
                     </div>
                   </div>
             </div>
         </div>
-      </div>
+
             <!--Pomodoro timer sessions display-->
              <div id="pomo-info">
               <h2>Your Sessions</h2>
@@ -75,7 +74,7 @@
                 <h2>TO-DO LIST</h2>
                 <div id="newtask">
                   <input type="text" placeholder="Add new task">
-                  <button id="newTaskButton"><i class="fa fa-plus"></i></button>
+                  <button id="newTaskButton" aria-label="addNewTaskOnToDoList"><i class="fa fa-plus"></i></button>
                 <div id="tasks"></div>
               </div>
             </div> 
