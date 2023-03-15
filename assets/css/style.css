@@ -116,8 +116,7 @@ nav .icon-burger .line {
   height: 50px;
   width: 50px;
   border-radius: 50px;
-  border: 2px #194a7a;
-  background-color:#93b9ff;
+  background-color:#194a7a;
 }
 
 input  {
@@ -261,7 +260,7 @@ input  {
 
 
 /*----------------------------------------------------media queries*/
-@media (min-width: 300px) and (max-width: 600px) {
+@media (min-width: 300px) and (max-width: 700px) {
   /*-----------------------NAVBAR STYLING*/
   header{
     max-width: 100%;
@@ -277,10 +276,14 @@ input  {
     background-color: #2149a1;
   }
 
-  nav #logo {
-    float: none;
+  nav #logo{
+  float: left;
     width: 30%;
+    height: 100%;
+    display: flex;
     align-items: center;
+    font-size: 20px;
+    color: #87b9ff;
   }
   nav .links {
     float: none;
@@ -348,13 +351,10 @@ input  {
   }
 
     #pomo-title h2{
-      font-size: 29px;
-      display: flex;
-      flex-direction: column;
-      width: 100%;
-      justify-content: center;
-      align-items: center;
-      margin-left: 31px;
+      font-size: 24px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
   }
 
   #to-do-container {
