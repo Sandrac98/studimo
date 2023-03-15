@@ -181,11 +181,12 @@ input  {
   background-color:#93b9ff;
 }
 
-#pomo-tips{
-  font-size: 1.5em;
+#pomo-tips, p{
+  font-size: 30px;
   padding: 35px;
-  line-height: 40px;
+  line-height: 90px;
 }
+
 
 
 
