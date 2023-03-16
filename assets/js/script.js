@@ -65,7 +65,6 @@ let timerOverSound = new Audio ("alert-sound.wav")
       togglePlayPauseIcon(reset);
       if (reset) {
         stopClock();
-        
       } else {
         if (isClockStopped) {
           setUpdatedTimers();
@@ -116,6 +115,7 @@ let timerOverSound = new Audio ("alert-sound.wav")
       displayCurrentTimeLeftInSession();
       type = "Work";
       timeSpentInCurrentSession = 0;
+      timerOverSound();
     };
   
     const stepDown = () => {
