@@ -36,6 +36,8 @@ document.addEventListener("DOMContentLoaded", () => {
      color: "black" 
    });
   
+let timerOverSound = new Audio ("alert-sound.wav")
+
     // START
     startButton.addEventListener("click", () => {
       toggleClock();
@@ -63,6 +65,7 @@ document.addEventListener("DOMContentLoaded", () => {
       togglePlayPauseIcon(reset);
       if (reset) {
         stopClock();
+        
       } else {
         if (isClockStopped) {
           setUpdatedTimers();
@@ -210,7 +213,6 @@ document.addEventListener("DOMContentLoaded", () => {
     };
   
   });
-
 
 
 

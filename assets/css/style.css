@@ -32,13 +32,13 @@ nav {
 	height: 100px;
 	background-color: #2149a1;
 }
-nav #logo {
+nav #logo  {
 	float: left;
 	width: 30%;
 	height: 100%;
 	display: flex;
 	align-items: center;
-	font-size: 14px;
+	font-size: 26px;
 	color: #87b9ff;
 }
 
@@ -301,14 +301,14 @@ input  {
     height: auto;
     flex-direction: column;
     justify-content: space-evenly;
-    background-color: #2149a1a1;
+    background-color: #2149a1ea;
     overflow: hidden;
     box-sizing: border-box;
     transition: all .5s ease-in-out;
   }
   nav .links a {
     font-size: 28px;
-    color: #287df5;
+    color: #87b9ff;
     text-transform: uppercase;
   }
  
