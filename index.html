@@ -10,15 +10,15 @@
       <link rel="stylesheet" href="assets/css/style.css" type="text/css" >
       <title>STUDIMO</title>
     </head>
-    <header>
+ <header>
       <!--this code was taken from https://codepen.io/MinzCode/pen/bGexzXw -->
       <nav>     
         <input id="nav-toggle" type="checkbox"> 
         <h1 id="logo"><i class="fa fa-stopwatch-20"></i>STUDIMO</h1>
         <ul class="links">
-          <li><a href="#studimo">STUDIMO</a></li>
-          <li><a href="#to-do-container">To-do List</a></li> 
-          <li><a href="#pomo-information">How to Use STUDIMO</a></li>
+          <li><a href="#studimo">Pomodoro</a></li>
+          <li><a href="#todo-list">To-do List</a></li> 
+          <li><a href="#settings">Settings</a></li>
         </ul>
         <label for="nav-toggle" class="icon-burger">
           <div class="line"></div>
@@ -27,15 +27,15 @@
         </label>
       </nav>
     </header>
-
-    <body>
+    <body> 
+     
+    <section id="studimo">
       <!--Pomodo timer display-->
-      <div id="studimo">
         <div id="pomo-container">
             <div id="pomo-clock">
                   <div id="pomo-timer"></div>
                   <div>
-                    <input type="text" id="pomo-task" placeholder="Enter your task title here...">
+                    <input type="text" id="pomo-task" class="current-session" placeholder="Enter task and press play">
                   </div>
                   <div id="pomo-timer-actions">
                     <button id="start-pomo">
@@ -45,43 +45,45 @@
                     <button id="stop-pomo" class="hidden">
                       <i class="fas fa-stop" aria-label="stopButton"></i>
                     </button>
-                  </div>
-                  <div id="pomo-title">
-                    <h2>Changes made here won't affect your current session</h2>
-                  </div>
-            <div id="pomo-timer-actions">
-                    <div class="pomo-input">
-                      <label>Work Duration</label>
-                      <input type="number" name="work-input" id="work-input" aria-label="inputWorkLenght"> 
-                    </div>
-                    <div class="pomo-input">
-                      <label>Break Duration</label>  
-                      <input type="number" name="break-input" id="break-input" aria-label="inputBreakLenght">
-                    </div>
-                  </div>
-            </div>
-        </div>
-      </div>
-
-            <!--Pomodoro timer sessions display-->
+                  </div> 
+              <!--Pomodoro timer sessions display-->
              <div id="pomo-info">
               <h2>Your Sessions</h2>
               <ul id="pomo-sessions"></ul>
             </div>
-  
+            <br>
+                 
+                  </div>
+            </div>
+  </section>
 
-        <!--TO-DO list-->
-            <div id="todo-list">
-              <div id="to-do-container">
-                <h2>TO-DO LIST</h2>
-                <div id="newtask">
-                  <input type="text" placeholder="Add new task">
-                  <button id="newTaskButton" aria-label="addNewTaskOnToDoList"><i class="fa fa-plus"></i></button>
-                <div id="tasks"></div>
-              </div>
-            </div> 
-          </div>
+  <!--TO-DO list-->
+  <section id="todo-list">
+    <div id="to-do-container">
+      <h2>TO-DO LIST</h2>
+      <div id="newTaskItem">
+        <input type="text" placeholder="Add new task" class="newTask">
+        <button id="newTaskButton" aria-label="addNewTaskOnToDoList"><i class="fa fa-plus"></i></button>
+      <div id="tasks"></div>
+    </div>
+  </div> 
+  </section>
+
+
          <!--Pomodoro tips-->
+         <div id="settings"> 
+          <div id="pomo-title">
+                <h2>Changes made here won't affect your current session</h2>
+              
+                <div class="pomo-input">
+                  <label>Work Duration</label>
+                  <input type="number" name="work-input" id="work-input" aria-label="inputWorkLenght"> 
+                </div>
+                <div class="pomo-input">
+                  <label>Break Duration</label>  
+                  <input type="number" name="break-input" id="break-input" aria-label="inputBreakLenght">
+                </div>
+              
             <div id="pomo-information">
             <div id="how-to-use-it">
               <h2>Here are some friendly tips to get you started:</h2>
@@ -100,11 +102,14 @@
                 adjust the length of your Pomodoros or breaks to suit your needs.</li>
                 <p> By following these tips, you'll be able to use the Pomodoro Technique to boost your productivity and focus.
                Remember, it's important to find what works best for you!</p>
-              </ul> 
-            </div> 
+                </ul>
+            </div>
             
             </div>
         <script src="assets/js/script.js"></script> 
         <script src="timer-display.js"></script>
     </body>
+    <footer>
+      <P>Copyright © Sandra C</P>
+    </footer>
 </html>

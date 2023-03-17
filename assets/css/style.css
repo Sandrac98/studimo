@@ -126,7 +126,7 @@ input  {
     border: #0075db;
     border-style: solid;
     font-size: 1.5rem;
-    padding: 4px;
+    padding: 4px 14px;
     border-radius: 50px;
     background-color: #93b9ff;
   }
@@ -141,9 +141,12 @@ input  {
   }
 
 
-#pomo-title h2  {
-    padding: 10px;
-    font-size: 40px;
+#pomo-title  {
+  flex-direction: column;
+  width: 100%;
+  justify-content: center;
+  align-items: center; 
+  font-size: 30px;
 }
 
 .pomo-input {
@@ -161,8 +164,10 @@ input  {
   flex-direction: column;
   width: 100%;
   justify-content: center;
-  align-items: center;
+  align-items: center; 
+  font-size: 30px;
 }
+
 
  #pomo-sessions {
     font-size: 1.8rem;
@@ -171,11 +176,11 @@ input  {
     width: 100%;
     justify-content: center;
     align-items: center;
-}
+   }
 
 
 /*------------------------------------------- Information styling*/
-#how-to-use-it {
+#settings{
   padding-top: 120px;
   margin: 35px;
   background-color:#93b9ff;
@@ -198,27 +203,36 @@ input  {
   justify-content: center;
   align-items: center;
   background-color:#93b9ff;
-  padding-top: 140px;
-  padding-bottom: 344px;
+  padding-top: 465px;
+  padding-bottom: 532px;
 }
 
-#newtask input {
+#newTaskItem input {
   max-width: 100%;
   height: 25px;
-  padding: 6px;
-  color: black;
+  padding: 4px 10px;
+  color: 1;
   font-weight: bold;
   position: relative;
   border-radius: 25px;
   font-family: 'Itim', cursive, sans-serif;
   font-size: 1.5rem;
   border: #0075db;
-  border-style: solid;
+    border-style: solid;
   margin-bottom: 20px;
 }
 
-#newtask ::placeholder{
+#newTask ::placeholder{
   font-weight: 100;
+  font-size: 15px;
+}
+
+.current-session{
+  border: none;
+  text-align: center;
+  font-weight: bold;
+  color: #194a7a;
+  pointer-events: auto;
 }
 
 #newTaskButton{

@@ -36,7 +36,6 @@ document.addEventListener("DOMContentLoaded", () => {
      color: "black" 
    });
   
-let timerOverSound = new Audio ("alert-sound.wav")
 
     // START
     startButton.addEventListener("click", () => {
@@ -219,7 +218,7 @@ let timerOverSound = new Audio ("alert-sound.wav")
 
 // TO-DO LIST
 document.querySelector('#newTaskButton').onclick = function(){
-  if(document.querySelector('#newtask input').value.length == 0){
+  if(document.querySelector('#newTaskItem input').value.length == 0){
       alert("Enter Task Name")
   }
 
@@ -227,7 +226,7 @@ document.querySelector('#newTaskButton').onclick = function(){
       document.querySelector('#tasks').innerHTML += `
           <div class="task">
               <span id="taskname">
-                  ${document.querySelector('#newtask input').value}
+                  ${document.querySelector('#newTaskItem input').value}
               </span>
               <button class="delete">
                   <i class="far fa-trash-alt"></i>
@@ -235,9 +234,9 @@ document.querySelector('#newTaskButton').onclick = function(){
           </div>
       `;
 
-      var current_tasks = document.querySelectorAll(".delete");
-      for(var i=0; i<current_tasks.length; i++){
-          current_tasks[i].onclick = function(){
+      let currentTasks = document.querySelectorAll(".delete");
+      for(let i=0; i<currentTasks.length; i++){
+          currentTasks[i].onclick = function(){
               this.parentNode.remove();
           }
       }
