@@ -122,7 +122,7 @@ nav .icon-burger .line {
   cursor: pointer;
 }
 
-input  {
+input {
     border: #0075db;
     border-style: solid;
     font-size: 1.5rem;
@@ -139,25 +139,6 @@ input  {
 .hidden {
     display: none;
   }
-
-
-#pomo-title  {
-  flex-direction: column;
-  width: 100%;
-  justify-content: center;
-  align-items: center; 
-  font-size: 30px;
-}
-
-.pomo-input {
-    display: flex;
-    flex-direction: column;
-    width: 210px;
-    margin-right: 10px;
-    font-size: 1.4rem;
-    background-color:#93b9ff;
-  }
-
 
 #pomo-info h2 {
   display: flex;
@@ -178,20 +159,13 @@ input  {
     align-items: center;
    }
 
-
-/*------------------------------------------- Information styling*/
-#settings{
-  padding-top: 120px;
-  margin: 35px;
-  background-color:#93b9ff;
+.current-session{
+  border: none;
+  text-align: center;
+  font-weight: bold;
+  color: #194a7a;
+  pointer-events: auto;
 }
-
-#pomo-tips, p{
-  font-size: 30px;
-  padding: 35px;
-  line-height: 90px;
-}
-
 
 
 
@@ -211,28 +185,19 @@ input  {
   max-width: 100%;
   height: 25px;
   padding: 4px 10px;
-  color: 1;
   font-weight: bold;
   position: relative;
   border-radius: 25px;
   font-family: 'Itim', cursive, sans-serif;
   font-size: 1.5rem;
   border: #0075db;
-    border-style: solid;
+  border-style: solid;
   margin-bottom: 20px;
 }
 
 #newTask ::placeholder{
   font-weight: 100;
   font-size: 15px;
-}
-
-.current-session{
-  border: none;
-  text-align: center;
-  font-weight: bold;
-  color: #194a7a;
-  pointer-events: auto;
 }
 
 #newTaskButton{
@@ -277,12 +242,86 @@ input  {
 }
 
 
+/*------------------------------------------- Setting styling*/
+#settings{
+  display: flex;
+  flex-direction: column;
+  max-width: 100%;
+  justify-content: center;
+  align-items: center;
+  background-color:#93b9ff;
+  padding-top: 130px;
+} 
+
+#settings-title {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: center;
+  align-items: center; 
+  font-size: 30px;
+ 
+}
+
+ label {
+  max-width: 100%;
+  height: 25px;
+  padding: 4px 10px;
+  font-weight: bold;
+  position: relative;
+  border-radius: 25px;
+  font-size: 20px;
+  }
+
+
+#settings-title input{
+  height: 21px;
+  width: 60px;
+  border-radius: 50px;
+  background-color: transparent;
+  border: solid;
+  border-color: #0075db;
+  cursor: pointer;
+}
+
+#pomo-tips{
+  font-size: 30px;
+  padding: 35px;
+  line-height: 90px;
+  text-align: center;
+}
+
+
+#pomo-tips li, p{
+  text-align: center;
+  font-size: 26px;
+  max-width: 100%;
+  line-height: 45px;
+  margin: 10px;
+  list-style: none;
+}
+
+span{
+  font-weight: bold;
+}
 /*----------------------------------------------------media queries*/
 @media (min-width: 300px) and (max-width: 700px) {
+
+  
+body{
+  max-width: 100%;
+  height: auto;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+#studimo, html {
+  background-color: #93b9ff;
+  max-width: 100%;
+}
+
   /*-----------------------NAVBAR STYLING*/
-  header{
-    max-width: 100%;
-  }
+
   nav {
     position: fixed;
     z-index: 10;
@@ -341,12 +380,8 @@ input  {
   nav :checked ~ .icon-burger .line:nth-child(2) {
     opacity: 0;
   }
- #studimo{
-  max-width: 100%;
-  padding: 0;
-  margin: 0;
- }
- 
+
+
     #pomo-container {
       display: flex;
       flex-direction: column;
@@ -428,7 +463,58 @@ input  {
   border-radius: 50px;
   justify-content: space-between;
 }
+
+
+#settings-title {
+  text-align: center;
+  font-size: 26px;
+  line-height: 50px;
 }
+
+
+ label {
+  max-width: 100%;
+  height: 25px;
+  padding: 4px 10px;
+  font-weight: bold;
+  position: relative;
+  border-radius: 25px;
+  font-size: 20px;
+  }
+
+
+input #settings {
+  height: 50px;
+  width: 30px;
+  border-radius: 50px;
+  background-color: transparent;
+  border: solid;
+  border-color: #0075db;
+  cursor: pointer;
+}
+
+#pomo-tips {
+  font-size: 21px;
+  line-height: 43px;
+}
+
+#pomo-tips li, p{
+  text-align: center;
+  font-size: 26px;
+  max-width: 100%;
+  line-height: 45px;
+  margin: 10px;
+}
+footer p{ 
+text-align: center;
+text-transform: none;
+padding: 3px 10px;
+line-height: 25px;
+font-size: 15px;
+font-weight: bold;
+}
+}
+
 
 /* -----------------------------------MEDIA QUERY FOR SAMSUNG FOLD */
 @media (min-width: 200px) and (max-width: 299px) {

@@ -9,12 +9,13 @@
       <script src="https://kit.fontawesome.com/cb0be301ad.js" crossorigin="anonymous"></script>
       <link rel="stylesheet" href="assets/css/style.css" type="text/css" >
       <title>STUDIMO</title>
+      <link rel="icon" type="image/x-icon" href="favicon.png">
     </head>
  <header>
       <!--this code was taken from https://codepen.io/MinzCode/pen/bGexzXw -->
       <nav>     
         <input id="nav-toggle" type="checkbox"> 
-        <h1 id="logo"><i class="fa fa-stopwatch-20"></i>STUDIMO</h1>
+        <a href="#studimo"><h1 id="logo"><i class="fa fa-stopwatch-20"></i>STUDIMO</h1></a>
         <ul class="links">
           <li><a href="#studimo">Pomodoro</a></li>
           <li><a href="#todo-list">To-do List</a></li> 
@@ -71,41 +72,37 @@
 
 
          <!--Pomodoro tips-->
-         <div id="settings"> 
-          <div id="pomo-title">
+         <section id="settings">
+          <div id="settings-title">
                 <h2>Changes made here won't affect your current session</h2>
-              
-                <div class="pomo-input">
+                <div class="settings-input">
                   <label>Work Duration</label>
-                  <input type="number" name="work-input" id="work-input" aria-label="inputWorkLenght"> 
+                  <input type="number" name="work-input" id="work-input" aria-label="typeWorkLenght"> 
                 </div>
-                <div class="pomo-input">
+                <div class="settings-input">
                   <label>Break Duration</label>  
-                  <input type="number" name="break-input" id="break-input" aria-label="inputBreakLenght">
+                  <input type="number" name="break-input" id="break-input" aria-label="typeBreakLenght">
                 </div>
-              
-            <div id="pomo-information">
-            <div id="how-to-use-it">
+                </div>
+            <div id="pomo-tips">
               <h2>Here are some friendly tips to get you started:</h2>
-              <ul id="pomo-tips">
-                <li> 1. Plan your work ahead of time: Before you start, make a list of the tasks you 
+              <ul>
+                <li> <span>1. Plan your work ahead of time:</span> Before you start, make a list of the tasks you 
                 want to accomplish during the session. This helps you stay on track and avoid distractions.</li>
-                <li>2. Set a timer for 25 minutes: Once you're ready to begin, set your timer for 25 minutes and focus solely on your task. 
+                <li><span>2. Set a timer for 25 minutes: </span>Once you're ready to begin, set your timer for 25 minutes and focus solely on your task. 
                 Stay away from any distractions during this time.</li>
-                <li>3. Take a quick break: After 25 minutes, take a five-minute break to stretch or take a quick walk.
+                <li><span>3. Take a quick break: </span>After 25 minutes, take a five-minute break to stretch or take a quick walk.
                  This helps you recharge and clear your mind.</li>
-                <li>4. Repeat the process: After your break, start another Pomodoro and continue working on your task. 
+                <li><span>4. Repeat the process:</span> After your break, start another Pomodoro and continue working on your task. 
                 Keep repeating this cycle until you complete your work or achieve your goal.</li>
-                <li>5. Take longer breaks: After every four Pomodoros, take a longer break of 15-30 minutes.
+                <li><span>5. Take longer breaks:</span> After every four Pomodoros, take a longer break of 15-30 minutes.
                 Use this time to relax and recharge before you start your next set of Pomodoros.</li>
-                <li>6.Be flexible: If you're struggling to focus or feeling overwhelmed, 
+                <li><span>6.Be flexible:</span> If you're struggling to focus or feeling overwhelmed, 
                 adjust the length of your Pomodoros or breaks to suit your needs.</li>
-                <p> By following these tips, you'll be able to use the Pomodoro Technique to boost your productivity and focus.
-               Remember, it's important to find what works best for you!</p>
-                </ul>
+                <p><span>By following these tips, you'll be able to use the Pomodoro Technique to boost your productivity and focus.
+               Remember, it's important to find what works best for you!</p></span>
             </div>
-            
-            </div>
+          </section>
         <script src="assets/js/script.js"></script> 
         <script src="timer-display.js"></script>
     </body>
