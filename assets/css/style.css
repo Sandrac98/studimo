@@ -85,13 +85,14 @@ nav .icon-burger .line {
 }
 /*---------------------------------------Pomodoro styling*/
 #pomo-container {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    justify-content: center;
-    align-items: center;
-    background-color:#93b9ff;
-    padding-top: 110px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  background-color: #93b9ff;
+  padding-top: 189px;
+  padding-bottom: 363px;
 }
 
 
@@ -170,15 +171,18 @@ input {
 
 
 /*---------------------------------------------------TO-DO list styling */
+#todo-list {
+  text-align: center;
+}
 #to-do-container {
   display: flex;
   flex-direction: column;
   width: 100%;
   justify-content: center;
   align-items: center;
-  background-color:#93b9ff;
-  padding-top: 465px;
-  padding-bottom: 532px;
+  background-color: #93b9ff;
+  padding-top: 160px;
+  padding-bottom: 929px;
 }
 
 #newTaskItem input {
@@ -250,7 +254,7 @@ input {
   justify-content: center;
   align-items: center;
   background-color:#93b9ff;
-  padding-top: 130px;
+  padding-top: 131px;
 } 
 
 #settings-title {
@@ -259,7 +263,7 @@ input {
   width: 100%;
   justify-content: center;
   align-items: center; 
-  font-size: 30px;
+  font-size: 20px;
  
 }
 
@@ -305,9 +309,7 @@ span{
   font-weight: bold;
 }
 /*----------------------------------------------------media queries*/
-@media (min-width: 300px) and (max-width: 700px) {
-
-  
+@media (min-width: 300px) and (max-width: 914px) { 
 body{
   max-width: 100%;
   height: auto;
@@ -320,7 +322,7 @@ body{
   max-width: 100%;
 }
 
-  /*-----------------------NAVBAR STYLING*/
+/*-----------------------NAVBAR STYLING*/
 
   nav {
     position: fixed;
@@ -342,6 +344,7 @@ body{
     font-size: 20px;
     color: #87b9ff;
   }
+
   nav .links {
     float: none;
     position: fixed;
@@ -359,6 +362,7 @@ body{
     box-sizing: border-box;
     transition: all .5s ease-in-out;
   }
+
   nav .links a {
     font-size: 28px;
     color: #87b9ff;
@@ -381,7 +385,7 @@ body{
     opacity: 0;
   }
 
-
+/*--------------------------------------------------Pomodoro styling*/
     #pomo-container {
       display: flex;
       flex-direction: column;
@@ -432,7 +436,7 @@ body{
     border-radius: 25px;
   }
 
-  #newtask input {
+  #newTaskItem input {
       max-width: 60%;
       height: 25px;
       padding: 6px;
@@ -444,30 +448,28 @@ body{
       font-size: 1.5rem;
       border: #0075db;
       border-style: solid;
-      margin-bottom: 20px;
-      margin-left: 45px;
 }
 .task {
   border: 3px solid #0075db;
-  cursor: pointer;
-  background-color: #93b9ff;
-  height: 25px;
-  width: 292px;
-  margin-bottom: 10px;
-  margin-left: 38px;
-  padding: 5px 11px;
-  display: flex;
-  font-family: 'Itim', cursive ,sans-serif;
-  font-size: 25px;
-  font-weight: bold;
-  border-radius: 50px;
-  justify-content: space-between;
+    cursor: pointer;
+    background-color: #93b9ff;
+    height: 30px;
+    width: 268px;
+    margin-bottom: 10px;
+    margin-left: 37px;
+    padding: 4px 10px;
+    display: flex;
+    font-family: 'Itim', cursive ,sans-serif;
+    font-size: 25px;
+    font-weight: bold;
+    border-radius: 50px;
+    justify-content: space-between;
 }
 
 
 #settings-title {
   text-align: center;
-  font-size: 26px;
+  font-size: 16px;
   line-height: 50px;
 }
 
