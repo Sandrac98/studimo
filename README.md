@@ -3,7 +3,7 @@ Welcome to STUDIMO, your go-to destination for boosting productivity and focus t
 
 Experience the benefits of the Pomodoro Technique for yourself by giving STUDIMO a try today!
 
-[View deployed site here](https://sandrac98.github.io/Studimo./)
+[View deployed site here](https://sandrac98.github.io/studimo/)
 
 ![Responsive Mockup](./assets/readme-images/mockup.png)
 
