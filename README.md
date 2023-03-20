@@ -78,13 +78,14 @@ The website was tested for responsiveness using the Google Chrome browser and th
 
 ## Manual Testing.
 
-- Ensure that the timer has reset by refreshing the page.
-- Verify the start of a 25-minute timer by pressing the "Play" button.
-- Verify the start of a 5 minutes brake after a 25 minutes session.
-- Verify the timer and break lenght can be customize after the timer has been stopped.
-- Verify the to-do list ask the user to enter the name of the task after pressing the "+" button.
-- Verify the "erase" button works when pressed to eliminate the task on the to-do list.
-
+|Test Label   | Test Action   | Expected Outcome   | Test Outcome   |   
+|-------------|---------------|--------------------|----------------|
+|Timer has reset by refreshing the page|Refresh page|Timer resets back to 25 minutes|PASS| 
+|Timer starts when 'Play' icon is pressed| Press 'Play' icon|Timer will start|PASS|   
+|Break starts when work timer finish| Let timer run out to check break session starts right away after work session finish|Break session timer starts after work timer ends|PASS|   
+|Customize TImer| Ensure that timer can be customize for work and break sessions after being stop and start again|Timer will start with the new time lenght |PASS|
+|Enter task name on to-do list|Click '+' button to check if user is ask to enter name task|Alert pop-up will appear|PASS|
+|Delete task on to-do list|Add new task and then press 'Delete' icon|Task will be deleted and will be removed from the list|PASS|
 
 # Validator Testing 
 
@@ -106,5 +107,7 @@ The website was tested for responsiveness using the Google Chrome browser and th
    - then select 'Pages' from the menu on the left.
    - From the source section drop-down menu, select the Master Branch
    - Once the master branch has been selected, the page will be automatically refreshed with a detailed ribbon display to indicate the successful deployment. 
-   
-<a href="https://www.flaticon.com/free-icons/timer" title="timer icons">Timer icons created by Freepik - Flaticon</a>
+
+
+# Credits 
+The favicon icon was taken from <a href="https://www.flaticon.com/free-icons/timer" title="timer icons">Timer icons created by Freepik - Flaticon</a>
