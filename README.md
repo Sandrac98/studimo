@@ -95,7 +95,7 @@ The website was tested for responsiveness using the Google Chrome browser and th
  - CSS
   - No errors were found when passing through the official [(Jigsaw) validator](./assets/readme-images/css-validation.png)
 
-- Lighthouse test.
+- Lighthouse test. [Lighthouse Test](./assets/readme-images/lighthouse-score.png)
 
 # Unfixed Bugs
  - I used the W3 Validator to check each page of the website and found some errors in the navbar. However, this code was sourced from another website and I have included a link to the original source in the code. As a result, I have not attempted to fix the errors highlighted by the validator. [navBar-error](./assets/readme-images/navbar-error.png)
