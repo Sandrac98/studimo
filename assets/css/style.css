@@ -77,7 +77,8 @@ nav .icon-burger .line {
   border-radius:3px;
   transition:all .3s ease-in-out;
 }
-/*---------------------------------------Pomodoro styling*/
+
+/*---------------------------------------------------------------Pomodoro styling*/
 #pomo-container {
   display:flex;
   flex-direction:column;
@@ -148,7 +149,9 @@ input {
   color:#194a7a;
   pointer-events:auto;
 }
-/*---------------------------------------------------TO-DO list styling */
+
+
+/*------------------------------------------------------------------------To-do list styling */
 #todo-list {
   text-align:center;
 }
@@ -215,7 +218,7 @@ input {
   border-radius:5px;
   margin-left:10px;
 }
-/*------------------------------------------- Setting styling*/
+/*------------------------------------------------------------------------ Setting and Pomodoro Tips styling*/
 #settings {
   display:flex;
   flex-direction:column;
@@ -268,7 +271,19 @@ label {
 span {
   font-weight:bold;
 }
-/*----------------------------------------------------media queries*/
+
+/*-------------------------------------------------------------Footer styling*/
+footer p {
+  text-align:center;
+  text-transform:none;
+  padding:3px 10px;
+  line-height:25px;
+  font-size:15px;
+  font-weight:bold;
+}
+
+
+/*---------------------------------------------------------------------Media queries*/
 @media (min-width:300px) and (max-width:914px) {
   body {
   max-width:100%;
@@ -338,6 +353,7 @@ nav :checked ~ .icon-burger .line:nth-child(3) {
 nav :checked ~ .icon-burger .line:nth-child(2) {
   opacity: 0;
 }
+
 /*--------------------------------------------------Pomodoro styling*/
     #pomo-container {
   display:flex;
@@ -364,6 +380,8 @@ nav :checked ~ .icon-burger .line:nth-child(2) {
   flex-direction:column;
   width:100%;
 }
+
+/*------------------------------------------------To-do List Styling*/
 #to-do-container {
   display:flex;
   flex-direction:column;
@@ -413,6 +431,8 @@ nav :checked ~ .icon-burger .line:nth-child(2) {
   border-radius:50px;
   justify-content:space-between;
 }
+
+/*--------------------------------------------Settings Styling */
 #settings-title {
   text-align:center;
   font-size:16px;
@@ -447,15 +467,11 @@ input #settings {
   line-height:45px;
   margin:10px;
 }
-footer p {
-  text-align:center;
-  text-transform:none;
-  padding:3px 10px;
-  line-height:25px;
-  font-size:15px;
-  font-weight:bold;
+
+
 }
-}/* -----------------------------------MEDIA QUERY FOR SAMSUNG FOLD */
+
+/* -----------------------------------MEDIA QUERY FOR SAMSUNG FOLD */
 @media (min-width:200px) and (max-width:299px) {
   body {
   max-width:100%;
@@ -466,6 +482,7 @@ footer p {
 #studimo,html {
   max-width:100%;
 }
+
 nav {
   position:fixed;
   z-index:10;
@@ -503,25 +520,27 @@ nav .links {
   transition:all .5s ease-in-out;
 }
 nav .links a {
-  font-size:25px;
+  font-size:28px;
   color:#87b9ff;
   text-transform:uppercase;
 }
-nav:checked ~ .links {
-  bottom:0;
+nav :checked ~ .links {
+  bottom: 0;
 }
 nav .icon-burger {
-  display:block;
+  display: block;
 }
-nav:checked ~ .icon-burger .line:nth-child(1) {
-  transform:translateY(10px) rotate(225deg);
+nav :checked ~ .icon-burger .line:nth-child(1) {
+  transform: translateY(10px) rotate(225deg);
 }
-nav:checked ~ .icon-burger .line:nth-child(3) {
-  transform:translateY(-10px) rotate(-225deg);
+nav :checked ~ .icon-burger .line:nth-child(3) {
+  transform: translateY(-10px) rotate(-225deg);
 }
-nav:checked ~ .icon-burger .line:nth-child(2) {
-  opacity:0;
+nav :checked ~ .icon-burger .line:nth-child(2) {
+  opacity: 0;
 }
+
+/*----------------------------------------------Pomodoro styling*/
 #pomo-clock {
   margin-bottom:40px;
   font-size:3em;
@@ -555,6 +574,8 @@ nav:checked ~ .icon-burger .line:nth-child(2) {
   align-items:center;
   font-size:24px;
 }
+
+/*------------------------------------------------To-do List Styling*/
 #newTaskItem input {
   max-width:54%;
   height:25px;
@@ -590,6 +611,8 @@ nav:checked ~ .icon-burger .line:nth-child(2) {
   border-radius:50px;
   justify-content:space-between;
 }
+
+/*--------------------------------------------Settings Styling */
 #settings-title {
   font-size:15px;
   line-height:50px;
@@ -624,12 +647,5 @@ input #settings {
   line-height:52px;
   margin:10px;
 }
-footer p {
-  text-align:center;
-  text-transform:none;
-  padding:3px 10px;
-  line-height:25px;
-  font-size:15px;
-  font-weight:bold;
-}
+
 }
