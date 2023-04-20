@@ -35,6 +35,8 @@ document.addEventListener("DOMContentLoaded", () => {
 		trailColor: "#0075db",
 		color: "black"
 	});
+    
+    const mySound = new Audio ('timerSound.wav');
 
 
 	// START
@@ -63,13 +65,12 @@ document.addEventListener("DOMContentLoaded", () => {
 	const toggleClock = reset => {
 		togglePlayPauseIcon(reset);
 		if (reset) {
-			stopClock();
+			stopClock();	
 		} else {
 			if (isClockStopped) {
 				setUpdatedTimers();
 				isClockStopped = false;
 			}
-
 			if (isClockRunning === true) {
 				// pause
 				clearInterval(clockTimer);
@@ -114,7 +115,7 @@ document.addEventListener("DOMContentLoaded", () => {
 		displayCurrentTimeLeftInSession();
 		type = "Work";
 		timeSpentInCurrentSession = 0;
-		timerOverSound();
+		
 	};
 
 	const stepDown = () => {
@@ -130,6 +131,7 @@ document.addEventListener("DOMContentLoaded", () => {
 				displaySessionLog("Work");
 				type = "Break";
 				setUpdatedTimers();
+				mySound.play();
 				// new
 				currentTaskLabel.value = "Break";
 				currentTaskLabel.disabled = true;
@@ -137,6 +139,7 @@ document.addEventListener("DOMContentLoaded", () => {
 				currentTimeLeftInSession = workSessionDuration;
 				type = "Work";
 				setUpdatedTimers();
+				mySound.play();
 				// new
 				if (currentTaskLabel.value === "Break") {
 					currentTaskLabel.value = workSessionLabel;

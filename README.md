@@ -111,3 +111,5 @@ The website was tested for responsiveness using the Google Chrome browser and th
 
 # Credits 
 The favicon icon was taken from <a href="https://www.flaticon.com/free-icons/timer" title="timer icons">Timer icons created by Freepik - Flaticon</a>
+
+Timer sound alert was taken from <a href="https://www.epidemicsound.com/music/featured/">Epidemic Sound</a>
