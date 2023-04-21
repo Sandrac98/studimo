@@ -1,3 +1,4 @@
+/*jshint esversion: 6 */
 document.addEventListener("DOMContentLoaded", () => {
 
 	const startButton = document.querySelector("#start-pomo");
@@ -222,7 +223,7 @@ document.addEventListener("DOMContentLoaded", () => {
 // TO-DO LIST
 document.querySelector('#newTaskButton').onclick = function() {
 	if (document.querySelector('#newTaskItem input').value.length == 0) {
-		alert("Enter Task Name")
+		alert("Enter Task Name");
 	}
 
 	else {
@@ -241,7 +242,7 @@ document.querySelector('#newTaskButton').onclick = function() {
 		for (let i = 0; i < currentTasks.length; i++) {
 			currentTasks[i].onclick = function() {
 				this.parentNode.remove();
-			}
+			};
 		}
 	}
-}
+};
