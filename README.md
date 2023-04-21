@@ -24,8 +24,6 @@ The goals of this website are:
 - [Design](#design)  
   + [Colour Scheme](#colour-scheme)
 -[Wireframes](#wireframes)
-- [Technologies used](#technologies-used)
-  + [Languages Used](#languages-used)
 - [Testing](#testing)
 - [Deployment](#deployment)
   + [Creating a Gitpod Workspace](#creating-a-gitpod-workspace)
