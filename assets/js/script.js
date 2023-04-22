@@ -36,8 +36,8 @@ document.addEventListener("DOMContentLoaded", () => {
 		trailColor: "#0075db",
 		color: "black"
 	});
-    
-    const mySound = new Audio ('timerSound.wav');
+
+	const mySound = new Audio('timerSound.wav');
 
 
 	// START
@@ -66,7 +66,7 @@ document.addEventListener("DOMContentLoaded", () => {
 	const toggleClock = reset => {
 		togglePlayPauseIcon(reset);
 		if (reset) {
-			stopClock();	
+			stopClock();
 		} else {
 			if (isClockStopped) {
 				setUpdatedTimers();
@@ -116,7 +116,7 @@ document.addEventListener("DOMContentLoaded", () => {
 		displayCurrentTimeLeftInSession();
 		type = "Work";
 		timeSpentInCurrentSession = 0;
-		
+
 	};
 
 	const stepDown = () => {

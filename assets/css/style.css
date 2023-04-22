@@ -1,651 +1,721 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Itim&display=swap');
-  * {
-  padding:0;
-  margin:0;
-  border:0;
-  font-family:'Itim',cursive;
+
+* {
+	padding: 0;
+	margin: 0;
+	border: 0;
+	font-family: 'Itim', cursive;
 }
+
 body {
-  max-width:100%;
-  height:auto;
-  margin-right:auto;
-  margin-left:auto;
+	max-width: 100%;
+	height: auto;
+	margin-right: auto;
+	margin-left: auto;
 }
-#studimo,html {
-  background-color:#93b9ff;
-  max-width:100%;
+
+#studimo,
+html {
+	background-color: #93b9ff;
+	max-width: 100%;
 }
+
 /*------------------------------------------------------------------------------------------- NAVBAR STYLING*/
 /*--this code was taken from https://codepen.io/MinzCode/pen/bGexzXw */
 nav {
-  position:fixed;
-  z-index:10;
-  left:0;
-  right:0;
-  top:0;
-  padding:0 5%;
-  height:100px;
-  background-color:#2149a1;
+	position: fixed;
+	z-index: 10;
+	left: 0;
+	right: 0;
+	top: 0;
+	padding: 0 5%;
+	height: 100px;
+	background-color: #2149a1;
 }
+
 nav #logo {
-  float:left;
-  width:30%;
-  height:100%;
-  display:flex;
-  align-items:center;
-  font-size:26px;
-  color:#87b9ff;
+	float: left;
+	width: 30%;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	font-size: 26px;
+	color: #87b9ff;
 }
+
 nav .links {
-  float:right;
-  padding:0;
-  margin:0;
-  width:60%;
-  height:100%;
-  display:flex;
-  justify-content:space-around;
-  align-items:center;
+	float: right;
+	padding: 0;
+	margin: 0;
+	width: 60%;
+	height: 100%;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
 }
+
 nav .links li {
-  list-style:none;
+	list-style: none;
 }
+
 nav .links a {
-  display:block;
-  padding:1em;
-  font-size:16px;
-  font-weight:bold;
-  color:#87b9ff;
-  text-decoration:none;
+	display: block;
+	padding: 1em;
+	font-size: 16px;
+	font-weight: bold;
+	color: #87b9ff;
+	text-decoration: none;
 }
+
 #nav-toggle {
-  position:absolute;
-  top:-100px;
+	position: absolute;
+	top: -100px;
 }
+
 nav .icon-burger {
-  display:none;
-  position:absolute;
-  right:5%;
-  top:50%;
-  transform:translateY(-50%);
+	display: none;
+	position: absolute;
+	right: 5%;
+	top: 50%;
+	transform: translateY(-50%);
 }
+
 nav .icon-burger .line {
-  width:30px;
-  height:5px;
-  background-color:#87b9ff;
-  margin:5px;
-  border-radius:3px;
-  transition:all .3s ease-in-out;
+	width: 30px;
+	height: 5px;
+	background-color: #87b9ff;
+	margin: 5px;
+	border-radius: 3px;
+	transition: all .3s ease-in-out;
 }
 
 /*---------------------------------------------------------------Pomodoro styling*/
 #pomo-container {
-  display:flex;
-  flex-direction:column;
-  width:100%;
-  justify-content:center;
-  align-items:center;
-  background-color:#93b9ff;
-  padding-top:189px;
-  padding-bottom:363px;
-}
-#pomo-clock {
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  align-items:center;
-  margin-bottom:40px;
-  font-size:3em;
-  background-color:#93b9ff;
-}
-#pomo-timer-actions {
-  padding:20px;
-  background-color:#93b9ff;
-}
-#pomo-timer-actions button {
-  height:50px;
-  width:50px;
-  border-radius:50px;
-  background-color:transparent;
-  border:solid;
-  border-color:#0075db;
-  cursor:pointer;
-}
-input {
-  border:#0075db;
-  border-style:solid;
-  font-size:1.5rem;
-  padding:4px 14px;
-  border-radius:50px;
-  background-color:#93b9ff;
-}
-::placeholder {
-  color:#194a7a;
-  background-color:#93b9ff;
-}
-.hidden {
-  display:none;
-}
-#pomo-info h2 {
-  display:flex;
-  flex-direction:column;
-  width:100%;
-  justify-content:center;
-  align-items:center;
-  font-size:30px;
-}
-#pomo-sessions {
-  font-size:1.8rem;
-  display:flex;
-  flex-direction:column;
-  width:100%;
-  justify-content:center;
-  align-items:center;
-}
-.current-session {
-  border:none;
-  text-align:center;
-  font-weight:bold;
-  color:#194a7a;
-  pointer-events:auto;
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	justify-content: center;
+	align-items: center;
+	background-color: #93b9ff;
+	padding-top: 189px;
+	padding-bottom: 363px;
 }
 
+#pomo-clock {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	margin-bottom: 40px;
+	font-size: 3em;
+	background-color: #93b9ff;
+}
+
+#pomo-timer-actions {
+	padding: 20px;
+	background-color: #93b9ff;
+}
+
+#pomo-timer-actions button {
+	height: 50px;
+	width: 50px;
+	border-radius: 50px;
+	background-color: transparent;
+	border: solid;
+	border-color: #0075db;
+	cursor: pointer;
+}
+
+input {
+	border: #0075db;
+	border-style: solid;
+	font-size: 1.5rem;
+	padding: 4px 14px;
+	border-radius: 50px;
+	background-color: #93b9ff;
+}
+
+::placeholder {
+	color: #194a7a;
+	background-color: #93b9ff;
+}
+
+.hidden {
+	display: none;
+}
+
+#pomo-info h2 {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	justify-content: center;
+	align-items: center;
+	font-size: 30px;
+}
+
+#pomo-sessions {
+	font-size: 1.8rem;
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	justify-content: center;
+	align-items: center;
+}
+
+.current-session {
+	border: none;
+	text-align: center;
+	font-weight: bold;
+	color: #194a7a;
+	pointer-events: auto;
+}
 
 /*------------------------------------------------------------------------To-do list styling */
 #todo-list {
-  text-align:center;
+	text-align: center;
 }
+
 #to-do-container {
-  display:flex;
-  flex-direction:column;
-  width:100%;
-  justify-content:center;
-  align-items:center;
-  background-color:#93b9ff;
-  padding-top:160px;
-  padding-bottom:929px;
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	justify-content: center;
+	align-items: center;
+	background-color: #93b9ff;
+	padding-top: 160px;
+	padding-bottom: 929px;
 }
+
 #newTaskItem input {
-  max-width:100%;
-  height:25px;
-  padding:4px 10px;
-  font-weight:bold;
-  position:relative;
-  border-radius:25px;
-  font-family:'Itim',cursive,sans-serif;
-  font-size:1.5rem;
-  border:#0075db;
-  border-style:solid;
-  margin-bottom:20px;
+	max-width: 100%;
+	height: 25px;
+	padding: 4px 10px;
+	font-weight: bold;
+	position: relative;
+	border-radius: 25px;
+	font-family: 'Itim', cursive, sans-serif;
+	font-size: 1.5rem;
+	border: #0075db;
+	border-style: solid;
+	margin-bottom: 20px;
 }
+
 #newTask::placeholder {
-  font-weight:100;
-  font-size:15px;
+	font-weight: 100;
+	font-size: 15px;
 }
+
 #newTaskButton {
-  font-size:22px;
-  background-color:transparent;
-  border:solid;
-  border-color:#0075db;
-  cursor:pointer;
-  width:47px;
-  height:45px;
-  border-radius:25px;
+	font-size: 22px;
+	background-color: transparent;
+	border: solid;
+	border-color: #0075db;
+	cursor: pointer;
+	width: 47px;
+	height: 45px;
+	border-radius: 25px;
 }
+
 .task {
-  border:3px solid #0075db;
-  cursor:pointer;
-  background-color:#93b9ff;
-  height:35px;
-  max-width:700px;
-  margin-bottom:8px;
-  padding:5px 10px;
-  display:flex;
-  font-family:'Itim',cursive,sans-serif;
-  font-size:1.5rem;
-  font-weight:bold;
-  border-radius:50px;
-  justify-content:space-between;
+	border: 3px solid #0075db;
+	cursor: pointer;
+	background-color: #93b9ff;
+	height: 35px;
+	max-width: 700px;
+	margin-bottom: 8px;
+	padding: 5px 10px;
+	display: flex;
+	font-family: 'Itim', cursive, sans-serif;
+	font-size: 1.5rem;
+	font-weight: bold;
+	border-radius: 50px;
+	justify-content: space-between;
 }
+
 .task button {
-  background-color:#6583e5;
-  color:rgb(43,41,41);
-  border:none;
-  cursor:pointer;
-  outline:none;
-  height:100%;
-  width:40px;
-  border-radius:5px;
-  margin-left:10px;
+	background-color: #6583e5;
+	color: rgb(43, 41, 41);
+	border: none;
+	cursor: pointer;
+	outline: none;
+	height: 100%;
+	width: 40px;
+	border-radius: 5px;
+	margin-left: 10px;
 }
+
 /*------------------------------------------------------------------------ Setting and Pomodoro Tips styling*/
 #settings {
-  display:flex;
-  flex-direction:column;
-  max-width:100%;
-  justify-content:center;
-  align-items:center;
-  background-color:#93b9ff;
-  padding-top:131px;
+	display: flex;
+	flex-direction: column;
+	max-width: 100%;
+	justify-content: center;
+	align-items: center;
+	background-color: #93b9ff;
+	padding-top: 131px;
 }
+
 #settings-title {
-  display:flex;
-  flex-direction:column;
-  width:100%;
-  justify-content:center;
-  align-items:center;
-  font-size:20px;
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	justify-content: center;
+	align-items: center;
+	font-size: 20px;
 }
+
 label {
-  max-width:100%;
-  height:25px;
-  padding:4px 10px;
-  font-weight:bold;
-  position:relative;
-  border-radius:25px;
-  font-size:20px;
+	max-width: 100%;
+	height: 25px;
+	padding: 4px 10px;
+	font-weight: bold;
+	position: relative;
+	border-radius: 25px;
+	font-size: 20px;
 }
+
 #settings-title input {
-  height:21px;
-  width:60px;
-  border-radius:50px;
-  background-color:transparent;
-  border:solid;
-  border-color:#0075db;
-  cursor:pointer;
+	height: 21px;
+	width: 60px;
+	border-radius: 50px;
+	background-color: transparent;
+	border: solid;
+	border-color: #0075db;
+	cursor: pointer;
 }
+
 #pomo-tips {
-  font-size:30px;
-  padding:35px;
-  line-height:90px;
-  text-align:center;
+	font-size: 30px;
+	padding: 35px;
+	line-height: 90px;
+	text-align: center;
 }
-#pomo-tips li,p {
-  text-align:center;
-  font-size:26px;
-  max-width:100%;
-  line-height:45px;
-  margin:10px;
-  list-style:none;
+
+#pomo-tips li,
+p {
+	text-align: center;
+	font-size: 26px;
+	max-width: 100%;
+	line-height: 45px;
+	margin: 10px;
+	list-style: none;
 }
+
 span {
-  font-weight:bold;
+	font-weight: bold;
 }
 
 /*-------------------------------------------------------------Footer styling*/
 footer p {
-  text-align:center;
-  text-transform:none;
-  padding:3px 10px;
-  line-height:25px;
-  font-size:15px;
-  font-weight:bold;
+	text-align: center;
+	text-transform: none;
+	padding: 3px 10px;
+	line-height: 25px;
+	font-size: 15px;
+	font-weight: bold;
 }
-
 
 /*---------------------------------------------------------------------Media queries*/
 @media (min-width:300px) and (max-width:914px) {
-  body {
-  max-width:100%;
-  height:auto;
-  margin-right:auto;
-  margin-left:auto;
-}
-#studimo,html {
-  background-color:#93b9ff;
-  max-width:100%;
-}
-/*-----------------------NAVBAR STYLING*/
+	body {
+		max-width: 100%;
+		height: auto;
+		margin-right: auto;
+		margin-left: auto;
+	}
 
-nav {
-  position:fixed;
-  z-index:10;
-  left:0;
-  right:0;
-  top:0;
-  padding:0 5%;
-  height:100px;
-  background-color:#2149a1;
-}
-nav #logo {
-  float:left;
-  width:30%;
-  height:100%;
-  display:flex;
-  align-items:center;
-  font-size:20px;
-  color:#87b9ff;
-}
-nav .links {
-  float:none;
-  position:fixed;
-  z-index:9;
-  left:0;
-  right:0;
-  top:100px;
-  bottom:100%;
-  width:auto;
-  height:auto;
-  flex-direction:column;
-  justify-content:space-evenly;
-  background-color:#2149a1ea;
-  overflow:hidden;
-  box-sizing:border-box;
-  transition:all .5s ease-in-out;
-}
-nav .links a {
-  font-size:28px;
-  color:#87b9ff;
-  text-transform:uppercase;
-}
-nav :checked ~ .links {
-  bottom: 0;
-}
-nav .icon-burger {
-  display: block;
-}
-nav :checked ~ .icon-burger .line:nth-child(1) {
-  transform: translateY(10px) rotate(225deg);
-}
-nav :checked ~ .icon-burger .line:nth-child(3) {
-  transform: translateY(-10px) rotate(-225deg);
-}
-nav :checked ~ .icon-burger .line:nth-child(2) {
-  opacity: 0;
-}
+	#studimo,
+	html {
+		background-color: #93b9ff;
+		max-width: 100%;
+	}
 
-/*--------------------------------------------------Pomodoro styling*/
-    #pomo-container {
-  display:flex;
-  flex-direction:column;
-  max-width:100%;
-  justify-content:center;
-  align-items:center;
-  background-color:#93b9ff;
-  padding-top:110px;
-}
-#pomo-clock {
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  align-items:center;
-  margin-bottom:40px;
-  font-size:3em;
-  background-color:#93b9ff;
-  max-width:100%;
-}
-#pomo-title h2 {
-  font-size:24px;
-  display:flex;
-  flex-direction:column;
-  width:100%;
-}
+	/*-----------------------NAVBAR STYLING*/
+	nav {
+		position: fixed;
+		z-index: 10;
+		left: 0;
+		right: 0;
+		top: 0;
+		padding: 0 5%;
+		height: 100px;
+		background-color: #2149a1;
+	}
 
-/*------------------------------------------------To-do List Styling*/
-#to-do-container {
-  display:flex;
-  flex-direction:column;
-  width:100%;
-  justify-content:center;
-  align-items:center;
-  background-color:#93b9ff;
-  padding-top:140px;
-  padding-bottom:520px;
-}
-#newTaskButton {
-  font-size:27px;
-  background-color:transparent;
-  border:solid;
-  border-color:#0075db;
-  cursor:pointer;
-  width:47px;
-  height:45px;
-  border-radius:25px;
-}
-#newTaskItem input {
-  max-width:60%;
-  height:25px;
-  padding:6px;
-  color:black;
-  font-weight:bold;
-  position:relative;
-  border-radius:25px;
-  font-family:'Itim',cursive,sans-serif;
-  font-size:1.5rem;
-  border:#0075db;
-  border-style:solid;
-}
-.task {
-  border:3px solid #0075db;
-  cursor:pointer;
-  background-color:#93b9ff;
-  height:30px;
-  width:244px;
-  margin-bottom:10px;
-  margin-left:37px;
-  padding:4px 10px;
-  display:flex;
-  font-family:'Itim',cursive,sans-serif;
-  font-size:25px;
-  font-weight:bold;
-  border-radius:50px;
-  justify-content:space-between;
-}
+	nav #logo {
+		float: left;
+		width: 30%;
+		height: 100%;
+		display: flex;
+		align-items: center;
+		font-size: 20px;
+		color: #87b9ff;
+	}
 
-/*--------------------------------------------Settings Styling */
-#settings-title {
-  text-align:center;
-  font-size:16px;
-  line-height:50px;
-}
-label {
-  max-width:100%;
-  height:25px;
-  padding:4px 10px;
-  font-weight:bold;
-  position:relative;
-  border-radius:25px;
-  font-size:20px;
-}
-input #settings {
-  height:50px;
-  width:30px;
-  border-radius:50px;
-  background-color:transparent;
-  border:solid;
-  border-color:#0075db;
-  cursor:pointer;
-}
-#pomo-tips {
-  font-size:21px;
-  line-height:43px;
-}
-#pomo-tips li,p {
-  text-align:center;
-  font-size:26px;
-  max-width:100%;
-  line-height:45px;
-  margin:10px;
-}
+	nav .links {
+		float: none;
+		position: fixed;
+		z-index: 9;
+		left: 0;
+		right: 0;
+		top: 100px;
+		bottom: 100%;
+		width: auto;
+		height: auto;
+		flex-direction: column;
+		justify-content: space-evenly;
+		background-color: #2149a1ea;
+		overflow: hidden;
+		box-sizing: border-box;
+		transition: all .5s ease-in-out;
+	}
 
+	nav .links a {
+		font-size: 28px;
+		color: #87b9ff;
+		text-transform: uppercase;
+	}
 
+	nav :checked~.links {
+		bottom: 0;
+	}
+
+	nav .icon-burger {
+		display: block;
+	}
+
+	nav :checked~.icon-burger .line:nth-child(1) {
+		transform: translateY(10px) rotate(225deg);
+	}
+
+	nav :checked~.icon-burger .line:nth-child(3) {
+		transform: translateY(-10px) rotate(-225deg);
+	}
+
+	nav :checked~.icon-burger .line:nth-child(2) {
+		opacity: 0;
+	}
+
+	/*--------------------------------------------------Pomodoro styling*/
+	#pomo-container {
+		display: flex;
+		flex-direction: column;
+		max-width: 100%;
+		justify-content: center;
+		align-items: center;
+		background-color: #93b9ff;
+		padding-top: 110px;
+	}
+
+	#pomo-clock {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		margin-bottom: 40px;
+		font-size: 3em;
+		background-color: #93b9ff;
+		max-width: 100%;
+	}
+
+	#pomo-title h2 {
+		font-size: 24px;
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+	}
+
+	/*------------------------------------------------To-do List Styling*/
+	#to-do-container {
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+		justify-content: center;
+		align-items: center;
+		background-color: #93b9ff;
+		padding-top: 140px;
+		padding-bottom: 520px;
+	}
+
+	#newTaskButton {
+		font-size: 27px;
+		background-color: transparent;
+		border: solid;
+		border-color: #0075db;
+		cursor: pointer;
+		width: 47px;
+		height: 45px;
+		border-radius: 25px;
+	}
+
+	#newTaskItem input {
+		max-width: 60%;
+		height: 25px;
+		padding: 6px;
+		color: black;
+		font-weight: bold;
+		position: relative;
+		border-radius: 25px;
+		font-family: 'Itim', cursive, sans-serif;
+		font-size: 1.5rem;
+		border: #0075db;
+		border-style: solid;
+	}
+
+	.task {
+		border: 3px solid #0075db;
+		cursor: pointer;
+		background-color: #93b9ff;
+		height: 30px;
+		width: 244px;
+		margin-bottom: 10px;
+		margin-left: 37px;
+		padding: 4px 10px;
+		display: flex;
+		font-family: 'Itim', cursive, sans-serif;
+		font-size: 25px;
+		font-weight: bold;
+		border-radius: 50px;
+		justify-content: space-between;
+	}
+
+	/*--------------------------------------------Settings Styling */
+	#settings-title {
+		text-align: center;
+		font-size: 16px;
+		line-height: 50px;
+	}
+
+	label {
+		max-width: 100%;
+		height: 25px;
+		padding: 4px 10px;
+		font-weight: bold;
+		position: relative;
+		border-radius: 25px;
+		font-size: 20px;
+	}
+
+	input #settings {
+		height: 50px;
+		width: 30px;
+		border-radius: 50px;
+		background-color: transparent;
+		border: solid;
+		border-color: #0075db;
+		cursor: pointer;
+	}
+
+	#pomo-tips {
+		font-size: 21px;
+		line-height: 43px;
+	}
+
+	#pomo-tips li,
+	p {
+		text-align: center;
+		font-size: 26px;
+		max-width: 100%;
+		line-height: 45px;
+		margin: 10px;
+	}
 }
 
 /* -----------------------------------MEDIA QUERY FOR SAMSUNG FOLD */
 @media (min-width:200px) and (max-width:299px) {
-  body {
-  max-width:100%;
-  height:auto;
-  margin-right:auto;
-  margin-left:auto;
-}
-#studimo,html {
-  max-width:100%;
-}
+	body {
+		max-width: 100%;
+		height: auto;
+		margin-right: auto;
+		margin-left: auto;
+	}
 
-nav {
-  position:fixed;
-  z-index:10;
-  left:0;
-  right:0;
-  top:0;
-  padding:0 5%;
-  height:100px;
-  background-color:#2149a1;
-}
-nav #logo {
-  float:left;
-  width:30%;
-  height:100%;
-  display:flex;
-  align-items:center;
-  font-size:20px;
-  color:#87b9ff;
-}
-nav .links {
-  float:none;
-  position:fixed;
-  z-index:9;
-  left:0;
-  right:0;
-  top:100px;
-  bottom:100%;
-  width:auto;
-  height:auto;
-  flex-direction:column;
-  justify-content:space-evenly;
-  background-color:#2149a1ea;
-  overflow:hidden;
-  box-sizing:border-box;
-  transition:all .5s ease-in-out;
-}
-nav .links a {
-  font-size:28px;
-  color:#87b9ff;
-  text-transform:uppercase;
-}
-nav :checked ~ .links {
-  bottom: 0;
-}
-nav .icon-burger {
-  display: block;
-}
-nav :checked ~ .icon-burger .line:nth-child(1) {
-  transform: translateY(10px) rotate(225deg);
-}
-nav :checked ~ .icon-burger .line:nth-child(3) {
-  transform: translateY(-10px) rotate(-225deg);
-}
-nav :checked ~ .icon-burger .line:nth-child(2) {
-  opacity: 0;
-}
+	#studimo,
+	html {
+		max-width: 100%;
+	}
 
-/*----------------------------------------------Pomodoro styling*/
-#pomo-clock {
-  margin-bottom:40px;
-  font-size:3em;
-  background-color:#93b9ff;
-  text-align:center;
-  max-width:180px;
-}
-.current-session {
-  border:none;
-  text-align:center;
-  font-weight:bold;
-  color:#194a7a;
-  pointer-events:auto;
-  max-width:200px;
-}
-::placeholder {
-  color:#194a7a;
-  background-color:#93b9ff;
-  font-size:18px;
-}
-#pomo-timer-actions {
-  padding-bottom:10px;
-  background-color:#93b9ff;
-  text-align:center;
-}
-#pomo-info h2 {
-  display:flex;
-  flex-direction:column;
-  width:100%;
-  justify-content:center;
-  align-items:center;
-  font-size:24px;
-}
+	nav {
+		position: fixed;
+		z-index: 10;
+		left: 0;
+		right: 0;
+		top: 0;
+		padding: 0 5%;
+		height: 100px;
+		background-color: #2149a1;
+	}
 
-/*------------------------------------------------To-do List Styling*/
-#newTaskItem input {
-  max-width:54%;
-  height:25px;
-  padding:8px 10px;
-  font-weight:bold;
-  position:relative;
-  border-radius:25px;
-  font-family:'Itim',cursive,sans-serif;
-  font-size:1.5rem;
-  border:#0075db;
-  border-style:solid;
-  margin-bottom:20px;
-}
-#newTaskButton {
-  font-size:23px;
-  border:solid;
-  border-color:#0075db;
-  cursor:pointer;
-  width:50px;
-  height:50px;
-  border-radius:25px;
-}
-.task {
-  cursor:pointer;
-  height:34px;
-  width:206px;
-  margin-bottom:10px;
-  margin-left:30px;
-  padding:5px 12px;
-  display:flex;
-  font-family:'Itim',cursive,sans-serif;
-  font-size:26px;
-  border-radius:50px;
-  justify-content:space-between;
-}
+	nav #logo {
+		float: left;
+		width: 30%;
+		height: 100%;
+		display: flex;
+		align-items: center;
+		font-size: 20px;
+		color: #87b9ff;
+	}
 
-/*--------------------------------------------Settings Styling */
-#settings-title {
-  font-size:15px;
-  line-height:50px;
-  text-align:center;
-}
-label {
-  max-width:100%;
-  height:25px;
-  padding:4px 10px;
-  font-weight:bold;
-  position:relative;
-  border-radius:25px;
-  font-size:20px;
-}
-input #settings {
-  height:50px;
-  width:30px;
-  border-radius:50px;
-  background-color:transparent;
-  border:solid;
-  border-color:#0075db;
-  cursor:pointer;
-}
-#pomo-tips {
-  font-size:20px;
-  line-height:50px;
-}
-#pomo-tips li,p {
-  text-align:center;
-  font-size:32px;
-  max-width:100%;
-  line-height:52px;
-  margin:10px;
-}
+	nav .links {
+		float: none;
+		position: fixed;
+		z-index: 9;
+		left: 0;
+		right: 0;
+		top: 100px;
+		bottom: 100%;
+		width: auto;
+		height: auto;
+		flex-direction: column;
+		justify-content: space-evenly;
+		background-color: #2149a1ea;
+		overflow: hidden;
+		box-sizing: border-box;
+		transition: all .5s ease-in-out;
+	}
 
+	nav .links a {
+		font-size: 28px;
+		color: #87b9ff;
+		text-transform: uppercase;
+	}
+
+	nav :checked~.links {
+		bottom: 0;
+	}
+
+	nav .icon-burger {
+		display: block;
+	}
+
+	nav :checked~.icon-burger .line:nth-child(1) {
+		transform: translateY(10px) rotate(225deg);
+	}
+
+	nav :checked~.icon-burger .line:nth-child(3) {
+		transform: translateY(-10px) rotate(-225deg);
+	}
+
+	nav :checked~.icon-burger .line:nth-child(2) {
+		opacity: 0;
+	}
+
+	/*----------------------------------------------Pomodoro styling*/
+	#pomo-clock {
+		margin-bottom: 40px;
+		font-size: 3em;
+		background-color: #93b9ff;
+		text-align: center;
+		max-width: 180px;
+	}
+
+	.current-session {
+		border: none;
+		text-align: center;
+		font-weight: bold;
+		color: #194a7a;
+		pointer-events: auto;
+		max-width: 200px;
+	}
+
+	::placeholder {
+		color: #194a7a;
+		background-color: #93b9ff;
+		font-size: 18px;
+	}
+
+	#pomo-timer-actions {
+		padding-bottom: 10px;
+		background-color: #93b9ff;
+		text-align: center;
+	}
+
+	#pomo-info h2 {
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+		justify-content: center;
+		align-items: center;
+		font-size: 24px;
+	}
+
+	/*------------------------------------------------To-do List Styling*/
+	#newTaskItem input {
+		max-width: 54%;
+		height: 25px;
+		padding: 8px 10px;
+		font-weight: bold;
+		position: relative;
+		border-radius: 25px;
+		font-family: 'Itim', cursive, sans-serif;
+		font-size: 1.5rem;
+		border: #0075db;
+		border-style: solid;
+		margin-bottom: 20px;
+	}
+
+	#newTaskButton {
+		font-size: 23px;
+		border: solid;
+		border-color: #0075db;
+		cursor: pointer;
+		width: 50px;
+		height: 50px;
+		border-radius: 25px;
+	}
+
+	.task {
+		cursor: pointer;
+		height: 34px;
+		width: 206px;
+		margin-bottom: 10px;
+		margin-left: 30px;
+		padding: 5px 12px;
+		display: flex;
+		font-family: 'Itim', cursive, sans-serif;
+		font-size: 26px;
+		border-radius: 50px;
+		justify-content: space-between;
+	}
+
+	/*--------------------------------------------Settings Styling */
+	#settings-title {
+		font-size: 15px;
+		line-height: 50px;
+		text-align: center;
+	}
+
+	label {
+		max-width: 100%;
+		height: 25px;
+		padding: 4px 10px;
+		font-weight: bold;
+		position: relative;
+		border-radius: 25px;
+		font-size: 20px;
+	}
+
+	input #settings {
+		height: 50px;
+		width: 30px;
+		border-radius: 50px;
+		background-color: transparent;
+		border: solid;
+		border-color: #0075db;
+		cursor: pointer;
+	}
+
+	#pomo-tips {
+		font-size: 20px;
+		line-height: 50px;
+	}
+
+	#pomo-tips li,
+	p {
+		text-align: center;
+		font-size: 32px;
+		max-width: 100%;
+		line-height: 52px;
+		margin: 10px;
+	}
 }

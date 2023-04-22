@@ -6,16 +6,9 @@ STUDIMO was tested for responsiveness using the Google Chrome browser and the Ch
 - [Manual Testing](#manual-testing)
 - [W3C HTML Validator](#w3c-html-validator) 
 - [W3C CSS Validator](#w3c-css-validator)
-- [Lighthouse](#lighthouse)
+- [Lighthouse](#lighthouse-score)
 - [JSHINT Javascript Code Quality Tool](#jshint-javascript-code-quality-tool)
-
-
-- [Bugs](#bugs)
-
- 
-
-
-
+- [Unfixed Bugs](#unfixed-bugs)
 
 ## User Stories Testing.
 * As a productivity-focused user, I desire the ability to customize my Pomodoro timer to 25 minutes, allowing for a uninterrupted work session.
@@ -40,7 +33,6 @@ STUDIMO was tested for responsiveness using the Google Chrome browser and the Ch
 |Delete task on to-do list|Add new task and then press 'Delete' icon|Task will be deleted and will be removed from the list|PASS|
 
  
-
 # W3C HTML Validator
  - Code was checked using https://validator.w3.org/ error showed in the results is explained at the unfixed bug section 
 
@@ -51,7 +43,7 @@ STUDIMO was tested for responsiveness using the Google Chrome browser and the Ch
   
 ![(Jigsaw) validator](./assets/testing-images/css-validation.png)
 
-# Lighthouse test. 
+# Lighthouse score. 
 
 ![Lighthouse Test](./assets/testing-images/lighthouse-score.png)
 

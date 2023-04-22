@@ -2,153 +2,175 @@
 <html lang="en">
 
 <head>
-   <meta charset="UTF-8">
-   <meta name="description" content="Pomodoro Timer">
-   <meta name="keywords" content="pomodoro, study timer, timer, intervals">
-   <meta name="author" content="Sandra C.">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <script src="https://kit.fontawesome.com/cb0be301ad.js" crossorigin="anonymous">
-   </script>
-   <link rel="stylesheet" href="assets/css/style.css" type="text/css">
-   <title> STUDIMO </title>
-   <link rel="icon" type="image/x-icon" href="favicon.png">
+	<meta charset="UTF-8">
+	<meta name="description" content="Pomodoro Timer">
+	<meta name="keywords" content="pomodoro, study timer, timer, intervals">
+	<meta name="author" content="Sandra C.">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script src="https://kit.fontawesome.com/cb0be301ad.js" crossorigin="anonymous">
+	</script>
+	<link rel="stylesheet" href="assets/css/style.css" type="text/css">
+	<title> STUDIMO </title>
+	<link rel="icon" type="image/x-icon" href="favicon.png">
 </head>
 
 <body>
-   <header>
-      <!--this code was taken from https://codepen.io/MinzCode/pen/bGexzXw -->
-      <nav>
-         <input id="nav-toggle" type="checkbox">
-         <a href="#studimo">
-            <h1 id="logo">
-               <i class="fa fa-stopwatch-20">
-               </i> STUDIMO
-            </h1>
-         </a>
-         <ul class="links">
-            <li>
-               <a href="#studimo"> Pomodoro </a>
-            </li>
-            <li>
-               <a href="#todo-list"> To-do List </a>
-            </li>
-            <li>
-               <a href="#settings"> Settings </a>
-            </li>
-         </ul>
-         <label for="nav-toggle" class="icon-burger">
-            <div class="line">
-            </div>
-            <div class="line">
-            </div>
-            <div class="line">
-            </div>
-         </label>
-      </nav>
-   </header>
-   
-   <section id="studimo">
-      <!--Pomodo timer display-->
-      <div id="pomo-container">
-         <div id="pomo-clock">
-            <div id="pomo-timer">
-            </div>
-            <div>
-               <input type="text" id="pomo-task" class="current-session" placeholder="Enter task and press play">
-            </div>
-            <div id="pomo-timer-actions">
-               <button id="start-pomo">
-                  <i class="fas fa-play" id="play-icon">
-                  </i>
-                  <i class="fas fa-pause hidden" id="pause-icon">
-                  </i>
-               </button>
-               <button id="stop-pomo" class="hidden">
-                  <i class="fas fa-stop">
-                  </i>
-               </button>
-            </div>
-            <!--Pomodoro timer sessions display-->
-            <div id="pomo-info">
-               <h2> Your Sessions </h2>
-               <ul id="pomo-sessions">
-               </ul>
-            </div>
-            <br>
-         </div>
-      </div>
-   </section>
+	<header>
+		<!--this code was taken from https://codepen.io/MinzCode/pen/bGexzXw -->
+		<nav>
+			<input id="nav-toggle" type="checkbox">
+			<a href="#studimo">
+				<h1 id="logo">
+					<i class="fa fa-stopwatch-20">
+					</i> STUDIMO
+				</h1>
+			</a>
+			<ul class="links">
+				<li>
+					<a href="#studimo"> Pomodoro </a>
+				</li>
+				<li>
+					<a href="#todo-list"> To-do List </a>
+				</li>
+				<li>
+					<a href="#settings"> Settings </a>
+				</li>
+			</ul>
+			<label for="nav-toggle" class="icon-burger">
+				<div class="line">
+				</div>
+				<div class="line">
+				</div>
+				<div class="line">
+				</div>
+			</label>
+		</nav>
+	</header>
 
-   <!--TO-DO list-->
-   <section id="todo-list">
-      <div id="to-do-container">
-         <h2> TO-DO LIST </h2>
-         <div id="newTaskItem">
-            <input type="text" placeholder="Add new task" class="newTask">
-            <button id="newTaskButton" aria-label="Add new task on To-do list">
-               <i class="fa fa-plus">
-               </i>
-            </button>
-            <div id="tasks">
-            </div>
-         </div>
-      </div>
-   </section>
+	<section id="studimo">
+		<!--Pomodo timer display-->
+		<div id="pomo-container">
+			<div id="pomo-clock">
+				<div id="pomo-timer">
+				</div>
+				<div>
+					<input type="text" id="pomo-task" class="current-session" placeholder="Enter task and press play">
+				</div>
+				<div id="pomo-timer-actions">
+					<button id="start-pomo">
+						<i class="fas fa-play" id="play-icon">
+						</i>
+						<i class="fas fa-pause hidden" id="pause-icon">
+						</i>
+					</button>
+					<button id="stop-pomo" class="hidden">
+						<i class="fas fa-stop">
+						</i>
+					</button>
+				</div>
 
-   <!--Pomodoro tips-->
-   <section id="settings">
-      <div id="settings-title">
-         <h2> Changes made here won't affect your current session </h2>
-         <div class="settings-input">
-            <label> Work Duration </label>
-            <input type="number" name="work-input" id="work-input" aria-label="Enter work lenght in minutes">
-         </div>
-         <div class="settings-input">
-            <label> Break Duration </label>
-            <input type="number" name="break-input" id="break-input" aria-label="Enter break lenght in minutes">
-         </div>
-      </div>
-      <div id="pomo-tips">
-         <h2> Here are some friendly tips to get you started: </h2>
-         <ul>
-            <li>
-               <span> 1. Plan your work ahead of time: </span> Before you start, make a list of the tasks you want to accomplish during the session. This helps
-               you stay on track and avoid distractions.
-            </li>
-            <li>
-               <span> 2. Set a timer for 25 minutes: </span> Once you're ready to begin, set your timer for 25 minutes and focus solely on your task. Stay away
-               from any distractions during this time.
-            </li>
-            <li>
-               <span> 3. Take a quick break: </span> After 25 minutes, take a five-minute break to stretch or take a quick walk. This helps you recharge and
-               clear your mind.
-            </li>
-            <li>
-               <span> 4. Repeat the process: </span> After your break, start another Pomodoro and continue working on your task. Keep repeating this cycle until
-               you complete your work or achieve your goal.
-            </li>
-            <li>
-               <span> 5. Take longer breaks: </span> After every four Pomodoros, take a longer break of 15-30 minutes. Use this time to relax and recharge
-               before you start your next set of Pomodoros.
-            </li>
-            <li>
-               <span> 6.Be flexible: </span> If you're struggling to focus or feeling overwhelmed, adjust the length of your Pomodoros or breaks to suit your
-               needs.
-            </li>
-         </ul>
-         <p>
-               <span> By following these tips, you'll be able to use the Pomodoro Technique to boost your productivity and focus. Remember, it's important to
-                  find what works best for you! </span>
-            </p>
-      </div>
-   </section>
-   <script src="assets/js/script.js">
-   </script>
-   <script src="timer-display.js">
-   </script>
-   <footer>
-      <P> Copyright © Sandra C </P>
-   </footer>
+				<!--Pomodoro timer sessions display-->
+				<div id="pomo-info">
+					<h2> Your Sessions </h2>
+					<ul id="pomo-sessions">
+					</ul>
+				</div>
+				<br>
+			</div>
+		</div>
+	</section>
+
+	<!--TO-DO list-->
+	<section id="todo-list">
+		<div id="to-do-container">
+			<h2> TO-DO LIST </h2>
+			<div id="newTaskItem">
+				<input type="text" placeholder="Add new task" class="newTask">
+				<button id="newTaskButton" aria-label="Add new task on To-do list">
+					<i class="fa fa-plus">
+					</i>
+				</button>
+				<div id="tasks">
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!--Pomodoro tips-->
+	<section id="settings">
+		<div id="settings-title">
+			<h2> Changes made here won't affect your current session
+			</h2>
+			<div class="settings-input">
+				<label> Work Duration </label>
+				<input type="number" name="work-input" id="work-input" aria-label="Enter work lenght in minutes">
+			</div>
+			<div class="settings-input">
+				<label> Break Duration </label>
+				<input type="number" name="break-input" id="break-input" aria-label="Enter break lenght in minutes">
+			</div>
+		</div>
+		<div id="pomo-tips">
+			<h2> Here are some friendly tips to get you started: </h2>
+			<ul>
+				<li>
+					<span> 1. Plan your work ahead of time: </span>
+					Before you start, make a list of the tasks 
+               you want to accomplish
+					during the session. This
+					helps you stay on track and 
+               avoid distractions.
+				</li>
+				<li>
+					<span> 2. Set a timer for 25 minutes: </span> 
+               Once you're ready to begin, 
+               set your timer for 25 minutes and
+					focus solely on your task. 
+               Stay away from any distractions during this time.
+				</li>
+				<li>
+					<span> 3. Take a quick break: </span> 
+               After 25 minutes, take
+					a five-minute break to stretch or take a quick
+					walk. This helps you recharge
+					and clear your mind.
+				</li>
+				<li>
+					<span> 4. Repeat the process: </span> 
+               After your break,
+					start another Pomodoro and continue working on
+					your task. Keep repeating this cycle
+					until you complete your work or achieve your goal.
+				</li>
+				<li>
+					<span> 5. Take longer breaks: </span> 
+               After every four
+					Pomodoros, take a longer break of 15-30 minutes.
+					Use this time to relax and recharge
+					before you start your next set of Pomodoros.
+				</li>
+				<li>
+					<span> 6.Be flexible: </span> 
+               If you're struggling to focus
+					or feeling overwhelmed, adjust the length of your
+					Pomodoro or breaks to suit your needs.
+				</li>
+			</ul>
+			<p>
+				<span> By following these tips, you'll be able to use
+					the Pomodoro Technique to boost your productivity and
+					focus. Remember, it's important to
+					find what works best for you! </span>
+			</p>
+		</div>
+	</section>
+
+	<script src="assets/js/script.js">
+	</script>
+	<script src="timer-display.js">
+	</script>
+	<footer>
+		<P> Copyright © Sandra C </P>
+	</footer>
 </body>
-
 </html>
