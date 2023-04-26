@@ -16,7 +16,7 @@ body {
 
 #studimo,
 html {
-	background-color: #93b9ff;
+	background-color: #90caf9;
 	max-width: 100%;
 }
 
@@ -88,7 +88,12 @@ nav .icon-burger .line {
 	border-radius: 3px;
 	transition: all .3s ease-in-out;
 }
-
+/*------------------- Welcome message*/
+#welcome-message {
+	background-color: #90caf9;
+	text-align: center;
+	margin: 270px;
+}
 /*---------------------------------------------------------------Pomodoro styling*/
 #pomo-container {
 	display: flex;
@@ -98,7 +103,6 @@ nav .icon-burger .line {
 	align-items: center;
 	background-color: #93b9ff;
 	padding-top: 189px;
-	padding-bottom: 363px;
 }
 
 #pomo-clock {
@@ -252,7 +256,6 @@ input {
 	justify-content: center;
 	align-items: center;
 	background-color: #93b9ff;
-	padding-top: 131px;
 }
 
 #settings-title {
