@@ -90,9 +90,12 @@ nav .icon-burger .line {
 }
 /*------------------- Welcome message*/
 #welcome-message {
-	background-color: #90caf9;
 	text-align: center;
-	margin: 270px;
+	margin: 288px;
+	color:#0d47a1;
+}
+#welcome-message h2{
+	font-size: 50px;
 }
 /*---------------------------------------------------------------Pomodoro styling*/
 #pomo-container {
@@ -101,8 +104,8 @@ nav .icon-burger .line {
 	width: 100%;
 	justify-content: center;
 	align-items: center;
+	padding-top: 179px;
 	background-color: #93b9ff;
-	padding-top: 189px;
 }
 
 #pomo-clock {
@@ -141,7 +144,6 @@ input {
 
 ::placeholder {
 	color: #194a7a;
-	background-color: #93b9ff;
 }
 
 .hidden {
@@ -186,8 +188,8 @@ input {
 	justify-content: center;
 	align-items: center;
 	background-color: #93b9ff;
-	padding-top: 160px;
-	padding-bottom: 929px;
+	padding-top: 230px;
+    padding-bottom: 450px;
 }
 
 #newTaskItem input {
@@ -288,9 +290,9 @@ label {
 }
 
 #pomo-tips {
-	font-size: 30px;
+	font-size: 20px;
 	padding: 35px;
-	line-height: 90px;
+	margin: 86px;
 	text-align: center;
 }
 
@@ -299,8 +301,7 @@ p {
 	text-align: center;
 	font-size: 26px;
 	max-width: 100%;
-	line-height: 45px;
-	margin: 10px;
+	line-height: 70px;
 	list-style: none;
 }
 
