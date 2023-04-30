@@ -56,7 +56,7 @@ The goals of this website are:
 
 - The website's navigation bar is designed to be responsive, appearing on every page and remaining fixed in place. Its layout and appearance adjust according to different screen sizes and devices, with a hamburger menu replacing it on smaller screens. The navigation bar's purpose is to make navigation between different parts of the website easier, eliminating the need for users to rely on the back button. 
 
-![navbar](./assets/readme-images/navbar-img.png)
+![navbar](./assets/readme-images/navbar.png)
 
 
 - Timer: The fundamental feature of a STUDIMO is its timer, which is initially set to a 25-minute work interval followed by a 5-minute break - the recommended time for implementing the Pomodoro technique. However, the timer is entirely customizable to accommodate the user's preferred session duration. Additionally, users can rename the timer to keep track of the time they've allocated to a particular task. 
